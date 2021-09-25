@@ -9,7 +9,13 @@ Bundler.require(*Rails.groups)
 module TestGuru
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+
+    # Определяем дефолтную версию rails
     config.load_defaults 6.1
+    # Определяем часовой пояс
+    config.time_zone = 'Central Time (Moscow)'
+    # Определяем язык
+    config.i18n.default_locale = :ru
 
     # Configuration for the application, engines, and railties goes here.
     #
