@@ -13,7 +13,8 @@ module TestGuru
     # Определяем дефолтную версию rails
     config.load_defaults 6.1
     # Определяем часовой пояс
-    config.time_zone = 'Central Time (Moscow)'
+    config.time_zone = "Moscow"
+
     # Определяем язык
     config.i18n.default_locale = :ru
 
