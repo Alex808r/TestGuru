@@ -1,24 +1,12 @@
-Version = '0.1.0'
+# версия приложения относится к приложению,
+# чтобы не засорять глобальное пространство имен
+# константу нужно объявить контексте приложения
+# Обратимся к config/application.rb чтобы определить
+# в какой модуль обернуто все приложение (9-я строка).
+# freeze - обязательно, ограничим изменение объекта.
 
-# нужно ли поместить в модуль или в модуль и класс?
-
-=begin
 module TestGuru
-  class Application
-    Version = '0.1.0'
+  class Application < Rails::Application
+    VERSION = '0.1.0'.freeze
   end
 end
-
-или
-
-module TestGuru
-  Version = '0.1.0'
-end
-
-или
-
-class TestGuru::Application
-  Version = '0.1.0'
-end
-
-=end

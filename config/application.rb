@@ -15,7 +15,7 @@ module TestGuru
     # Определяем часовой пояс
     config.time_zone = "Moscow"
 
-    # Определяем язык
+    # Определяем язык. Нужно еще создать файл ru.yml в конфиге системе. по аналогии с en.yml
     config.i18n.default_locale = :ru
 
     # Configuration for the application, engines, and railties goes here.
