@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  # установим корневой маршрут на страницу about.html
+  root 'application#hello'
 end
