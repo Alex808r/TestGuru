@@ -1,7 +1,8 @@
 class User < ApplicationRecord
 
   def show_tests_by_level(level)
-    Test.where(level: level, author_id: self.id)
-    # Test.where("level: :level, author_id: :id", level: level, id: self.id) # не работает
+    Test.joins('INNER JOIN tests_users ON tests_users.test_id = tests.id')
+      .where(tests: { level: level })
+      .where(tests_users: { user_id: self.id })
   end
 end

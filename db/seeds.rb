@@ -25,9 +25,8 @@ tests =  Test.create!([
   {title: "Ruby", level: 1, category_id: categories[1].id, author_id: users[0].id},
   {title: "Rails", category_id: categories[1].id, author_id: users[0].id},
   {title: "Rails", level: 2, category_id: categories[1].id, author_id: users[0].id},
-  {title: "Swift", level: 1, category_id: categories[3].id, author_id: users[0].id},
-
-  {title: "Swift", level: 2, category_id: Crategory.where(title: "Mobile development"), author_id: users[0].id}
+  {title: "Swift", level: 1, category_id: categories[3].id, author_id: users[0].id}
+ #{title: "Swift", level: 2, category_id: Category.where(title: "Mobile development"), author_id: users[0].id}
 ])
 
 questions = Question.create!([
@@ -45,4 +44,11 @@ answers = Answer.create!([
   {body: "Answer 1", question_id: questions[1].id},
   {body: "Answer 1", question_id: questions[4].id},
 ])
+
+tests_user = TestsUser.create!([
+  {test_id: tests[0].id, user_id: users[1].id },
+
+  {test_id: tests[0].id, user_id: users[2].id },
+  {test_id: tests[1].id, user_id: users[2].id }
+                               ])
 
