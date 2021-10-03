@@ -8,6 +8,7 @@
 #
 
 users = User.create([
+  {name: "It is Author", email: "author@author.com"},
   {name: "Mike", email: "mike@mike.com"},
   {name: "Dave", email: "dave@dave.com"},
                     ])
@@ -26,7 +27,7 @@ tests =  Test.create([
   {title: "Rails", level: 2, category_id: categories[1].id, author_id: users[0].id},
   {title: "Swift", level: 1, category_id: categories[3].id, author_id: users[0].id},
 
-  {title: "Swift", level: 2, category_id: Crategory.where(title: "Mobile development"), author_id: users[1].id}
+  {title: "Swift", level: 2, category_id: Crategory.where(title: "Mobile development"), author_id: users[0].id}
 ])
 
 questions = Question.create([
