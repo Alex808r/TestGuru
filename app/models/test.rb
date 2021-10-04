@@ -1,7 +1,7 @@
 class Test < ApplicationRecord
 
-  has_many :tests_user
-  has_many :question
+  has_many :tests_user, dependent: :destroy
+  has_many :question, dependent: :destroy
   has_one :category
 
   def self.show_tests_by_category(category)

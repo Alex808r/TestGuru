@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :tests_user
+  has_many :tests_user, dependent: :destroy
 
 
   def show_tests_by_level(level)
