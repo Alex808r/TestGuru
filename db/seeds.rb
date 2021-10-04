@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-#
+
+return if User.exists? && Test.exists? && Category.exists?
 
 users = User.create!([
   {name: "It is Author", email: "author@author.com"},
@@ -50,5 +51,4 @@ tests_user = TestsUser.create!([
 
   {test_id: tests[0].id, user_id: users[2].id },
   {test_id: tests[1].id, user_id: users[2].id }
-                               ])
-
+])
