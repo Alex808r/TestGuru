@@ -9,10 +9,3 @@ class User < ApplicationRecord
   end
 end
 
-
-=begin
-Test.joins('INNER JOIN tests_users ON tests_users.test_id = tests.id')
-joins(:category).where(categories: { title: category }).order(id: :desc).pluck('tests.title')
-
-joins('INNER JOIN categories ON tests.category_id = categories.id')
-=end
