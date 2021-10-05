@@ -21,34 +21,35 @@ categories = Category.create!([
   {title: "Mobile development"}
 ])
 
-tests =  Test.create!([
-  {title: "Ruby", category_id: categories[1].id, author_id: users[0].id},
-  {title: "Ruby", level: 1, category_id: categories[1].id, author_id: users[0].id},
-  {title: "Rails", category_id: categories[1].id, author_id: users[0].id},
-  {title: "Rails", level: 2, category_id: categories[1].id, author_id: users[0].id},
-  {title: "Swift", level: 1, category_id: categories[3].id, author_id: users[0].id}
- #{title: "Swift", level: 2, category_id: Category.where(title: "Mobile development"), author_id: users[0].id}
+tests =  Test.create([
+  {title: "Ruby", category: categories[1], author_id: users[0].id},
+  {title: "Ruby", category: categories[1], author_id: users[0].id},
+  {title: "Ruby", level: 1, category: categories[1], author_id: users[0].id},
+  {title: "Rails", category: categories[1], author_id: users[0].id},
+  {title: "Rails", level: 2, category: categories[1], author_id: users[0].id},
+  {title: "Swift", level: 1, category: categories[3], author_id: users[0].id}
+ # {title: "Swift", level: 2, category_id: Category.where(title: "Mobile development"), author_id: users[0].id}
 ])
 
 questions = Question.create!([
-  {body: "Question 1", test_id: tests[0].id},
-  {body: "Question 2", test_id: tests[0].id},
-  {body: "Question 3", test_id: tests[1].id},
-  {body: "Question 4", test_id: tests[1].id},
-  {body: "Question 5", test_id: tests[4].id}
+  {body: "Question 1", test: tests[0]},
+  {body: "Question 2", test: tests[0]},
+  {body: "Question 3", test: tests[1]},
+  {body: "Question 4", test: tests[1]},
+  {body: "Question 5", test: tests[4]}
 ])
 
 answers = Answer.create!([
-  {body: "Answer 1", question_id: questions[0].id},
-  {body: "Answer 2", question_id: questions[0].id},
-  {body: "Answer 1", question_id: questions[1].id},
-  {body: "Answer 1", question_id: questions[1].id},
-  {body: "Answer 1", question_id: questions[4].id},
+  {body: "Answer 1", question: questions[0]},
+  {body: "Answer 2", question: questions[0]},
+  {body: "Answer 1", question: questions[1]},
+  {body: "Answer 1", question: questions[1]},
+  {body: "Answer 1", question: questions[4]}
 ])
 
 tests_user = TestsUser.create!([
-  {test_id: tests[0].id, user_id: users[1].id },
+  {test: tests[0], user: users[1]},
 
-  {test_id: tests[0].id, user_id: users[2].id },
-  {test_id: tests[1].id, user_id: users[2].id }
+  {test: tests[0], user: users[2]},
+  {test: tests[1], user: users[2]}
 ])
