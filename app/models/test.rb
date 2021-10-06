@@ -20,8 +20,11 @@ class Test < ApplicationRecord
   #   where(level: levl)
   # end
 
-  def self.show_tests_by_category(category)
-    joins(:category).where(categories: { title: category }).order(id: :desc).pluck('tests.title')
-  end
+  # def self.show_tests_by_category(category)
+  #   joins(:category).where(categories: { title: category }).order(id: :desc).pluck('tests.title')
+  # end
+
+  scope :show_tests_by_category, -> (category) { joins(:category).where(categories: { title: category }) }
+
 
 end
