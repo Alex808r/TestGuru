@@ -11,8 +11,8 @@ return if User.exists? && Test.exists? && Category.exists?
 users = User.create!([
   {name: "It is Author", email: "author@author.com"},
   {name: "Mike", email: "mike@mike.com"},
-  {name: "Dave", email: "dave@dave.com"},
-                    ])
+  {name: "Dave", email: "dave@dave.com"}
+])
 
 categories = Category.create!([
   {title: "Backend"},
@@ -26,10 +26,10 @@ tests =  Test.create([
   {title: "Ruby 1",   level: 1, category: categories[0], author: users[0]},
   {title: "Rails 2",  level: 2, category: categories[0], author: users[0]},
   {title: "Rails 3",  level: 3, category: categories[0], author: users[0]},
-  {title: "HTML",     level: 4, category: categories[1], author: users[0]},
-  {title: "Python",   level: 5, category: categories[2], author: users[0]},
-  {title: "Swift",    level: 6, category: categories[3], author: users[0]},
-  {title: "Swift",    level: 7, category: categories[3], author: users[0]}
+  {title: "HTML 4",     level: 4, category: categories[1], author: users[0]},
+  {title: "Python 5",   level: 5, category: categories[2], author: users[0]},
+  {title: "Swift 6",    level: 6, category: categories[3], author: users[0]},
+  {title: "Swift 7",    level: 7, category: categories[3], author: users[0]}
 ])
 
 questions = Question.create!([
