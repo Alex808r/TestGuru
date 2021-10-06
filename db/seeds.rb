@@ -42,10 +42,10 @@ questions = Question.create!([
 
 answers = Answer.create!([
   {body: "Answer 1", question: questions[0]},
-  {body: "Answer 2", question: questions[0]},
-  {body: "Answer 1", question: questions[1]},
-  {body: "Answer 1", question: questions[1]},
-  {body: "Answer 1", question: questions[4]}
+  {body: "Answer 2", question: questions[1]},
+  {body: "Answer 3", question: questions[2]},
+  {body: "Answer 4", question: questions[3]},
+  {body: "Answer 5", question: questions[4]}
 ])
 
 tests_user = TestsUser.create!([
