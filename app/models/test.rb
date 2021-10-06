@@ -9,7 +9,7 @@ class Test < ApplicationRecord
 
   validates :title, :level, presence: true, uniqueness:
     { scope: :level,
-      message: "the name and level of the test are already in use" }
+      message: "the name and level of the test are already in use", case_sensitive: false }
 
   validates :level, numericality: { only_integer: true}
 
