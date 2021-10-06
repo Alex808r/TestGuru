@@ -15,20 +15,21 @@ users = User.create!([
                     ])
 
 categories = Category.create!([
-  {title: "Frontend"},
   {title: "Backend"},
+  {title: "Frontend"},
   {title: "Data Science"},
   {title: "Mobile development"}
 ])
 
 tests =  Test.create([
-  {title: "Ruby", category: categories[1], author: users[0]},
-  {title: "Ruby", category: categories[1], author: users[0]},
-  {title: "Ruby", level: 5, category: categories[1], author: users[0]},
-  {title: "Rails", category: categories[1], author: users[0]},
-  {title: "Rails", level: 1, category: categories[1], author: users[0]},
-  {title: "Swift", level: 1, category: categories[3], author: users[0]},
-  {title: "Swift", level: 2, category_id: Category.where(title: "Mobile development"), author: users[0]}
+  {title: "Ruby 0",   level: 0, category: categories[0], author: users[0]},
+  {title: "Ruby 1",   level: 1, category: categories[0], author: users[0]},
+  {title: "Rails 2",  level: 2, category: categories[0], author: users[0]},
+  {title: "Rails 3",  level: 3, category: categories[0], author: users[0]},
+  {title: "HTML",     level: 4, category: categories[1], author: users[0]},
+  {title: "Python",   level: 5, category: categories[2], author: users[0]},
+  {title: "Swift",    level: 6, category: categories[3], author: users[0]},
+  {title: "Swift",    level: 7, category: categories[3], author: users[0]}
 ])
 
 questions = Question.create!([
