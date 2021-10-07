@@ -6,7 +6,6 @@ class User < ApplicationRecord
   validates :name, :email, presence: true
 
   def show_tests_by_level(level)
-    #Test.joins(:tests_users).where(tests: { level: level }).where(tests_users: { user_id: self.id })
     tests.where(level: level)
   end
 
