@@ -11,24 +11,25 @@ return if User.exists? && Test.exists? && Category.exists?
 users = User.create!([
   {name: "It is Author", email: "author@author.com"},
   {name: "Mike", email: "mike@mike.com"},
-  {name: "Dave", email: "dave@dave.com"},
-                    ])
+  {name: "Dave", email: "dave@dave.com"}
+])
 
 categories = Category.create!([
-  {title: "Frontend"},
   {title: "Backend"},
+  {title: "Frontend"},
   {title: "Data Science"},
   {title: "Mobile development"}
 ])
 
 tests =  Test.create([
-  {title: "Ruby", category: categories[1], author: users[0]},
-  {title: "Ruby", category: categories[1], author: users[0]},
-  {title: "Ruby", level: 5, category: categories[1], author: users[0]},
-  {title: "Rails", category: categories[1], author: users[0]},
-  {title: "Rails", level: 1, category: categories[1], author: users[0]},
-  {title: "Swift", level: 1, category: categories[3], author: users[0]},
-  {title: "Swift", level: 2, category_id: Category.where(title: "Mobile development"), author: users[0]}
+  {title: "Ruby 0",   level: 0, category: categories[0], author: users[0]},
+  {title: "Ruby 1",   level: 1, category: categories[0], author: users[0]},
+  {title: "Rails 2",  level: 2, category: categories[0], author: users[0]},
+  {title: "Rails 3",  level: 3, category: categories[0], author: users[0]},
+  {title: "HTML 4",     level: 4, category: categories[1], author: users[0]},
+  {title: "Python 5",   level: 5, category: categories[2], author: users[0]},
+  {title: "Swift 6",    level: 6, category: categories[3], author: users[0]},
+  {title: "Swift 7",    level: 7, category: categories[3], author: users[0]}
 ])
 
 questions = Question.create!([
@@ -41,10 +42,10 @@ questions = Question.create!([
 
 answers = Answer.create!([
   {body: "Answer 1", question: questions[0]},
-  {body: "Answer 2", question: questions[0]},
-  {body: "Answer 1", question: questions[1]},
-  {body: "Answer 1", question: questions[1]},
-  {body: "Answer 1", question: questions[4]}
+  {body: "Answer 2", question: questions[1]},
+  {body: "Answer 3", question: questions[2]},
+  {body: "Answer 4", question: questions[3]},
+  {body: "Answer 5", question: questions[4]}
 ])
 
 tests_user = TestsUser.create!([
