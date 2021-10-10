@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
    resources :tests
 
+  # /tests/backend/ruby
+   get '/tests/:category/:title', to: 'tests#search', level: 2
+
 
 
    # установим корневой маршрут на страницу about.html
