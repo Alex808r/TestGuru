@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
-   # установим корневой маршрут на страницу about.html
-   # root 'application#hello'
-
    root to: 'tests#index'
 
-   get '/tests/:id/start', to: 'tests#start'
+   resources :tests
 
-   get '/tests/:id/start', to: 'tasks#start'
+
+
+   # установим корневой маршрут на страницу about.html
+   # root 'application#hello'
 
    # resources :tests
 
