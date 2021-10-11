@@ -7,14 +7,12 @@ class QuestionsController < ApplicationController
 
   def index
     # / tests/:test_id/questions(.:format)
-    @questions = @test.questions
-    render plain: @questions.inspect
-      # render inline: "<%= @questions.each(&:class)%>"
+    questions = @test.questions
+    render plain: questions.inspect
   end
 
   def show
     # /tests/:test_id/questions/:id(.:format)
-    @question = @test.questions.find(params[:id])
     render plain: @question.inspect
   end
 
@@ -23,9 +21,9 @@ class QuestionsController < ApplicationController
 
   def create
     #/tests/:test_id/questions(.:format)
-    @question = @test.questions.new(question_params)
-    if @question.save
-      render plain: @question.inspect
+    question = @test.questions.new(question_params)
+    if question.save
+      render plain: question.inspect
     else
       render plain: "The question was not created"
     end

@@ -1,35 +1,28 @@
 class TestsController < ApplicationController
 
-  before_action :find_test, only: %i[show]
+  before_action :set_test!, only: %i[show]
+
   around_action :log_execute_time
 
   def index
-    # byebug
-    # result = ["Class: #{params.class}", "Parameters #{params.inspect}" ]
-    # render plain: result.join("\n")
     @tests = Test.all
     render plain: @tests.inspect
   end
 
   def show
-    redirect_to root_path
+    render plain: @test.inspect
   end
 
   def new
-
   end
 
   def create
-    test = Test.create(test_params)
-    render plain: test.inspect
-
-    # test = Test.create(params.require(:test).permit(:title, :level))
-    # render plain: test.inspect
-
-    # test = Test.create(params[:test])
-    # render plain: test.inspect
-    # # result = ["Class: #{params.class}", "Parameters #{params.inspect}" ]
-    # render plain: result.join("\n")
+    test = Test.new(test_params)
+    if test.save
+      render plain: test.inspect
+    else
+      render plain: "The test was not created"
+    end
   end
 
   def search
@@ -43,7 +36,7 @@ class TestsController < ApplicationController
     params.require(:test).permit(:title, :level)
   end
 
-  def find_test
+  def set_test!
     @test = Test.find(params[:id])
   end
 
