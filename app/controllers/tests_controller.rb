@@ -1,12 +1,15 @@
 class TestsController < ApplicationController
 
   before_action :set_test!, only: %i[show]
-
   around_action :log_execute_time
+
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
     @tests = Test.all
-    render plain: @tests.inspect
+    tests_titles = []
+    @tests.each{|test| tests_titles.push(test.title)}
+    render plain: tests_titles.join("\n")
   end
 
   def show
@@ -38,6 +41,10 @@ class TestsController < ApplicationController
 
   def set_test!
     @test = Test.find(params[:id])
+  end
+
+  def rescue_with_test_not_found
+    render plain: "Test was not found"
   end
 
   def log_execute_time
