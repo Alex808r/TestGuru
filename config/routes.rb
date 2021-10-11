@@ -1,11 +1,27 @@
 Rails.application.routes.draw do
 
-   root to: 'tests#index'
+   # root to: 'tests#index'
+   # resources :tests
+   #
+   # # /tests/backend/ruby
+   # get '/tests/:category/:title', to: 'tests#search', level: 2
 
-   resources :tests
 
-  # /tests/backend/ruby
-   get '/tests/:category/:title', to: 'tests#search', level: 2
+   namespace :admin do
+      resources :articles, :comments
+   end
+
+   #resource :geocoder
+   #resolve('Geocoder') { [:geocoder] }
+
+
+   # get 'profile', action: :show, to: 'users#'
+  # get 'profile', action: :show, controller: 'users'
+
+  # get 'profile', to: 'users#show'
+  # get '/profile', to: 'users#show'
+
+  # get '/patients/:id', to: 'patients#show' , as: 'patient'
 
 
 
