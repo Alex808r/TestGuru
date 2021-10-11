@@ -5,8 +5,10 @@ class TestsController < ApplicationController
 
   def index
     # byebug
-    result = ["Class: #{params.class}", "Parameters #{params.inspect}" ]
-    render plain: result.join("\n")
+    # result = ["Class: #{params.class}", "Parameters #{params.inspect}" ]
+    # render plain: result.join("\n")
+    @tests = Test.all
+    render plain: @tests.inspect
   end
 
   def show
