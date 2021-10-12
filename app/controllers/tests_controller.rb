@@ -1,15 +1,12 @@
 class TestsController < ApplicationController
 
-  before_action :set_test!, only: %i[show]
-  around_action :log_execute_time
+  before_action :set_test, only: %i[show]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
-    @tests = Test.all
-    tests_titles = []
-    @tests.each{|test| tests_titles.push(test.title)}
-    render plain: tests_titles.join("\n")
+    @tests = Test.pluck(:id, :title).sort
+    render plain: @tests
   end
 
   def show
@@ -28,10 +25,6 @@ class TestsController < ApplicationController
     end
   end
 
-  def search
-    result = ["Class: #{params.class}", "Parameters #{params.inspect}" ]
-    render plain: result.join("\n")
-  end
 
   private
 
@@ -39,19 +32,12 @@ class TestsController < ApplicationController
     params.require(:test).permit(:title, :level)
   end
 
-  def set_test!
+  def set_test
     @test = Test.find(params[:id])
   end
 
   def rescue_with_test_not_found
     render plain: "Test was not found"
-  end
-
-  def log_execute_time
-    start = Time.now
-    yield
-    finish = Time.now - start
-    logger.info("Execution time: #{finish * 1000}ms")
   end
 
 end

@@ -1,18 +1,16 @@
 class QuestionsController < ApplicationController
 
-  before_action :set_test!, only: %i[index show create destroy]
-  before_action :set_test!, only: %i[show destroy]
+  before_action :set_test, only: %i[index show create destroy]
+  before_action :set_question, only: %i[show destroy]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
+  # rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    # / tests/:test_id/questions(.:format)
     questions = @test.questions
     render plain: questions.inspect
   end
 
   def show
-    # /tests/:test_id/questions/:id(.:format)
     render plain: @question.inspect
   end
 
@@ -20,7 +18,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    #/tests/:test_id/questions(.:format)
     question = @test.questions.new(question_params)
     if question.save
       render plain: question.inspect
@@ -30,26 +27,23 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    #/tests/:test_id/questions/:id
-    if @question.destroy
-      redirect_to test_questions_path
-    else
-      render plain: "The question was not deleted"
-    end
+    @question.destroy
+    redirect_to test_questions_path
   end
 
   private
 
-  def set_test!
-    @test = Test.find(params[:test_id])
-  end
-
-  def set_question!
-    @question = @test.questions.find(params[:id])
-  end
-
   def question_params
     params.require(:question).permit(:body)
+  end
+
+  def set_test
+    @test = Test.find(params[:test_id])
+    # @test = Test.find_by(id: params[:test_id])
+  end
+
+  def set_question
+    @question = Question.find(params[:id])
   end
 
   def rescue_with_question_not_found
