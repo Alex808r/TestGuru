@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
-  # установим корневой маршрут на страницу about.html
-  root 'application#hello'
+   root to: 'tests#index'
+
+   resources :tests do
+      resources :questions, shallow: true
+   end
+
 end
