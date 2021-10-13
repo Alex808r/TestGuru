@@ -4,16 +4,18 @@ class TestsController < ApplicationController
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
-  def index
-    @tests = Test.pluck(:id, :title).sort
-    render plain: @tests
+  def index(par)
+    @tests = Test.all
+    # @tests = Test.pluck(:id, :title).sort
+      #render plain: @tests
   end
 
   def show
-    render plain: @test.inspect
+
   end
 
   def new
+    @test = Test.new
   end
 
   def create
@@ -23,6 +25,7 @@ class TestsController < ApplicationController
     else
       render plain: "The test was not created"
     end
+    # render plain: test.save ? test.inspect : "The test was not created"
   end
 
 
