@@ -1,15 +1,5 @@
-
+<%= render "shared/errors", object: @test %>
 <%= form_with model: @test, local: true do |form| %>
-  <% if @test.errors.present? %>
-    <div>
-      <h2> <%= pluralize(@test.errors.count, 'error' ) %> detected: </h2>
-      <ul>
-        <% @test.errors.full_messages.each do |message| %>
-          <li> <%= message  %> </li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <p>
     <%= form.label :title %><br>
