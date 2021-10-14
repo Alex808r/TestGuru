@@ -7,11 +7,10 @@ class Test < ApplicationRecord
   has_many :users_tests, dependent: :destroy
   has_many :users, through: :users_tests, dependent: :destroy
 
-  validates :title, :level, presence: true, uniqueness:
-    { scope: :level,
-      message: "The name and level of the test are already in use", case_sensitive: false }
+  validates :title, presence: true, uniqueness:
+  { scope: :level, message: "The name and level of the test are already in use" }
 
-  validates :level, numericality: { only_integer: true}
+  validates :level, numericality: { only_integer: true }
 
   scope :level_easy, -> {where(level: 0..1)}
   scope :level_medium, -> {where(level: 2..4)}
