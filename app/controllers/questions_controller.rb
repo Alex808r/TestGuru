@@ -1,13 +1,13 @@
 class QuestionsController < ApplicationController
 
-  before_action :set_test, only: %i[index create ]
+  before_action :set_test, only: %i[new index create ]
   before_action :set_question, only: %i[show destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    questions = @test.questions
-    render plain: questions.inspect
+    @questions = @test.questions
+    render plain: @questions.inspect
   end
 
   def show
@@ -15,14 +15,16 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    @question = Question.new
   end
 
   def create
-    question = @test.questions.new(question_params)
-    if question.save
-      render plain: question.inspect
+    @question = @test.questions.new(question_params)
+    if @question.save
+      render plain: @question.inspect
     else
-      render plain: "The question was not created"
+      #render plain: "The question was not created"
+      render :new
     end
   end
 
