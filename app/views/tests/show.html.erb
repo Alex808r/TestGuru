@@ -13,9 +13,6 @@
 <%= link_to "Back", tests_path %>
 
 <h3> Questions:  </h3>
-
-<%= link_to "New Question", new_test_question_path(@test) %><br>
-
 <table>
   <tr>
     <th> Id </th>
@@ -27,3 +24,5 @@
   <%= render @questions %>
 
 </table>
+<br>
+<%= link_to "New Question", new_test_question_path(@test) %><br>
