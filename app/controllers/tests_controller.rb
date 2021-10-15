@@ -6,8 +6,6 @@ class TestsController < ApplicationController
 
   def index
     @tests = Test.all
-    # @tests = Test.pluck(:id, :title).sort
-      #render plain: @tests
   end
 
   def show
@@ -18,9 +16,7 @@ class TestsController < ApplicationController
     @test = Test.new
   end
 
-  def edit
-
-  end
+  def edit; end
 
   def create
     @test = Test.new(test_params)
@@ -40,9 +36,6 @@ class TestsController < ApplicationController
   end
 
   def destroy
-
-    #render plain: params
-
     @test.destroy
     redirect_to tests_path
   end
