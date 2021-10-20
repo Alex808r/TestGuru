@@ -5,6 +5,18 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
 
+  SUCCESSFUL_SCORE = 85
+
+  scope :successful, -> { where('score >= ?', SUCCESSFUL_SCORE) }
+
+  def test_successful?
+    true if passage_percentes >= SUCCESSFUL_SCORE
+  end
+
+  def passage_percentes
+    ((correct_questions * 100).to_f/test.questions.count).round(2)
+  end
+
   def completed?
     current_question.nil?
   end
