@@ -1,5 +1,9 @@
 <h1> Passing the <%= @test_passage.test.title %> Test </h1>
 
+<h3> All questions:  <%= @test_passage.test.questions.size %> </h3>
+
+<h3> Current question has a number:  <%= @test_passage.current_question_number %></h3><br>
+
 <b>
   <%= @test_passage.current_question.body %>
 </b>
