@@ -1,5 +1,6 @@
-class QuestionsController < ApplicationController
+# frozen_string_literal: true
 
+class QuestionsController < ApplicationController
   before_action :set_test, only: %i[new create]
   before_action :set_question, only: %i[show destroy edit update]
 
@@ -20,8 +21,7 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @question.update(question_params)
@@ -35,7 +35,6 @@ class QuestionsController < ApplicationController
     @question.destroy
     redirect_to test_path(@question.test)
   end
-
 
   private
 
@@ -53,7 +52,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_with_question_not_found
-    render plain: "Question was not found"
+    render plain: 'Question was not found'
   end
-
 end

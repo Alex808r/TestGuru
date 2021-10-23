@@ -1,8 +1,9 @@
-class User < ApplicationRecord
+# frozen_string_literal: true
 
-  has_many :test_passages,dependent: :destroy
-  has_many :tests,through: :test_passages
-  has_many :author_tests, class_name: "Test", foreign_key: :author_id, dependent: :destroy
+class User < ApplicationRecord
+  has_many :test_passages, dependent: :destroy
+  has_many :tests, through: :test_passages
+  has_many :author_tests, class_name: 'Test', foreign_key: :author_id, dependent: :destroy
 
   validates :name, :email, presence: true
 
@@ -14,4 +15,3 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 end
-
