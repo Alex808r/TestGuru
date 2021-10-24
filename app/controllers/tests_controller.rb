@@ -1,6 +1,7 @@
-class TestsController < ApplicationController
+# frozen_string_literal: true
 
-  before_action :set_test, only: %i[show edit update destroy]
+class TestsController < ApplicationController
+  before_action :set_test, only: %i[show edit update destroy start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -40,6 +41,11 @@ class TestsController < ApplicationController
     redirect_to tests_path
   end
 
+  def start
+    @user = User.second
+    @user.tests.push(@test)
+    redirect_to @user.test_passage(@test)
+  end
 
   private
 
@@ -52,8 +58,6 @@ class TestsController < ApplicationController
   end
 
   def rescue_with_test_not_found
-    render plain: "Test was not found"
+    render plain: 'Test was not found'
   end
-
 end
-

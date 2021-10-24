@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
-  has_many :tests_users, dependent: :destroy
-  has_many :tests, through: :tests_users
-  has_many :author_tests, class_name: "Test", foreign_key: :author_id, dependent: :destroy
+  has_many :test_passages, dependent: :destroy
+  has_many :tests, through: :test_passages
+  has_many :author_tests, class_name: 'Test', foreign_key: :author_id, dependent: :destroy, inverse_of: :author
 
   validates :name, :email, presence: true
 
@@ -9,5 +11,7 @@ class User < ApplicationRecord
     tests.where(level: level)
   end
 
+  def test_passage(test)
+    test_passages.order(id: :desc).find_by(test_id: test.id)
+  end
 end
-

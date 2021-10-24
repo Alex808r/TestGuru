@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # версия приложения относится к приложению,
 # чтобы не засорять глобальное пространство имен
 # константу нужно объявить контексте приложения
@@ -7,6 +9,6 @@
 
 module TestGuru
   class Application < Rails::Application
-    VERSION = '0.1.0'.freeze
+    VERSION = '0.1.0'
   end
 end

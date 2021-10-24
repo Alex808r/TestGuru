@@ -1,6 +1,8 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -13,7 +15,7 @@ module TestGuru
     # Определяем дефолтную версию rails
     config.load_defaults 6.1
     # Определяем часовой пояс
-    config.time_zone = "Moscow"
+    config.time_zone = 'Moscow'
 
     # Определяем язык. Нужно еще создать файл ru.yml в конфиге системе. по аналогии с en.yml
     config.i18n.default_locale = :ru

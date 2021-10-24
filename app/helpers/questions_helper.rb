@@ -1,11 +1,11 @@
-module QuestionsHelper
+# frozen_string_literal: true
 
+module QuestionsHelper
   def question_header(question)
     if question.new_record?
-      "Create new question"
+      'Create new question'
     else
-      "Edit question"
+      'Edit question'
     end
   end
-
 end
