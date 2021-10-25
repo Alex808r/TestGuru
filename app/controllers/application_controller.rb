@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
 
     def authenticate_user!
       unless current_user
-        flash[:info] = 'Authenticate please'
+        flash[:info] = "Authenticate please"
+        # render plain: params.to_yaml
         redirect_to login_path
       end
 
@@ -21,4 +22,17 @@ class ApplicationController < ActionController::Base
     def logged_in?
       current_user.present?
     end
+
+    def require_no_authentication
+      return unless logged_in?
+      flash[:alert] = "You are already signed in!"
+      redirect_to root_path
+    end
+
+    def require_authentication
+      return if logged_in?
+      flash[:alert] = "You are not signed in!"
+      redirect_to root_path
+    end
+
 end
