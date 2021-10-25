@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
         flash[:info] = "Authenticate please"
         redirect_to login_path
       end
+
+      cookies[:email] = current_user&.email
     end
 
     def current_user
