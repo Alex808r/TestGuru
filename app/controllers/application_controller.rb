@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-
   helper_method :current_user, :logged_in?
 
   private
 
     def authenticate_user!
       unless current_user
-        flash[:info] = "Authenticate please"
+        flash[:info] = 'Authenticate please'
         redirect_to login_path
       end
 

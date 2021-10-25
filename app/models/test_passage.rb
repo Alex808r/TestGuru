@@ -34,20 +34,20 @@ class TestPassage < ApplicationRecord
 
   private
 
-  def before_validation_set_first_question
-    self.current_question = test.questions.first if test.present?
-  end
+    def before_validation_set_first_question
+      self.current_question = test.questions.first if test.present?
+    end
 
-  def correct_answer?(answer_ids)
-    # correct_answers.ids.sort == answer_ids&.map(&:to_i)&.sort
-    correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
-  end
+    def correct_answer?(answer_ids)
+      # correct_answers.ids.sort == answer_ids&.map(&:to_i)&.sort
+      correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
+    end
 
-  def correct_answers
-    current_question.answers.correct_answer
-  end
+    def correct_answers
+      current_question.answers.correct_answer
+    end
 
-  def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
-  end
+    def next_question
+      test.questions.order(:id).where('id > ?', current_question.id).first
+    end
 end

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
-
   before_action :authenticate_user!
   before_action :set_test, only: %i[show edit update destroy start]
 
@@ -51,13 +50,13 @@ class TestsController < ApplicationController
 
   private
 
-  def test_params
-    params.require(:test).permit(:title, :level, :category_id, :author_id)
-  end
+    def test_params
+      params.require(:test).permit(:title, :level, :category_id, :author_id)
+    end
 
-  def set_test
-    @test = Test.find(params[:id])
-  end
+    def set_test
+      @test = Test.find(params[:id])
+    end
 
   def rescue_with_test_not_found
     render plain: 'Test was not found'

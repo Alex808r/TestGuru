@@ -40,20 +40,20 @@ class QuestionsController < ApplicationController
 
   private
 
-  def question_params
-    params.require(:question).permit(:body)
-  end
+    def question_params
+      params.require(:question).permit(:body)
+    end
 
-  def set_test
-    @test = Test.find(params[:test_id])
-    # @test = Test.find_by(id: params[:test_id])
-  end
+    def set_test
+      @test = Test.find(params[:test_id])
+      # @test = Test.find_by(id: params[:test_id])
+    end
 
-  def set_question
-    @question = Question.find(params[:id])
-  end
+    def set_question
+      @question = Question.find(params[:id])
+    end
 
-  def rescue_with_question_not_found
-    render plain: 'Question was not found'
-  end
+    def rescue_with_question_not_found
+      render plain: 'Question was not found'
+    end
 end
