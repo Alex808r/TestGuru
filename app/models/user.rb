@@ -11,7 +11,10 @@ class User < ApplicationRecord
   before_save :before_save_email_downcase
 
   validates :name,  presence: true, length: { minimum: 3, maximum: 50 }
-  validates :email, presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
+  # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  validates :email, presence: true,
+            format: { with: VALID_EMAIL_REGEX },
+            uniqueness: { case_sensitive: false }
   validates :password, presence: true, if: Proc.new {|user| user.password_digest.blank?}
   validates :password, confirmation: true
 
