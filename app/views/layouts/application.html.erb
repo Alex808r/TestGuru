@@ -11,13 +11,8 @@
   </head>
 
   <body>
-  <% if logged_in? %>
-    <p class="nav user"> Welcome, <b><%= current_user.email %></b> Guru </p>
-      <%= link_to "exit", logout_path, method: :delete %>
 
-    <hr>
-  <% end %>
-
+  <p> <%= render 'shared/nav' %> </p>
 
     <%= yield %>
   <br>
