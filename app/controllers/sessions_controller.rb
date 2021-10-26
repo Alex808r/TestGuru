@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
-      sign_in(user)
+      log_in(user)
       flash[:success] = "Welcome back, #{current_user.name}"
       redirect_to_user_request
     else
@@ -19,17 +19,14 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete(:user_id)
-    @current_user = nil
+    log_out
     flash[:success] = 'See you later!'
     redirect_to root_path
   end
-
 
   private
 
   def redirect_to_user_request
     redirect_to cookies.delete(:user_requested_path) || tests_path
   end
-
 end
