@@ -37,4 +37,8 @@ class ApplicationController < ActionController::Base
     flash[:alert] = 'You are not signed in!'
     redirect_to root_path
   end
+
+  def sign_in(user)
+    session[:user_id] = user.id
+  end
 end
