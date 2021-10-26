@@ -11,8 +11,7 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome back, #{current_user.name}"
-      redirect_to cookies[:requested_path] || root_path
-      # redirect_to root_path
+      redirect_to_user_request
     else
       flash.now[:alert] = 'Are you a Guru? Verify your Email and Password please'
       render :new
@@ -22,7 +21,15 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:user_id)
     @current_user = nil
-    flash[:success] = "See you later!"
+    flash[:success] = 'See you later!'
     redirect_to root_path
   end
+
+
+  private
+
+  def redirect_to_user_request
+    redirect_to cookies.delete(:user_requested_path) || tests_path
+  end
+
 end

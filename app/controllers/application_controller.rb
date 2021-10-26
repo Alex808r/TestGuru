@@ -5,35 +5,36 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def authenticate_user!
-      unless current_user
-        flash[:info] = "Authenticate please"
-        cookies[:requested_path] = request.fullpath
-        # render plain: params.to_yaml
-        redirect_to login_path
-      end
-
-      cookies[:email] = current_user&.email
+  def authenticate_user!
+    unless current_user
+      flash[:info] = 'Authenticate please'
+      cookies[:user_requested_path] = request.fullpath
+      # render plain: params.to_yaml
+      redirect_to login_path
     end
 
-    def current_user
-      @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-    end
+    cookies[:email] = current_user&.email
+  end
 
-    def logged_in?
-      current_user.present?
-    end
+  def current_user
+    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  end
 
-    def require_no_authentication
-      return unless logged_in?
-      flash[:alert] = "You are already signed in!"
-      redirect_to root_path
-    end
+  def logged_in?
+    current_user.present?
+  end
 
-    def require_authentication
-      return if logged_in?
-      flash[:alert] = "You are not signed in!"
-      redirect_to root_path
-    end
+  def require_no_authentication
+    return unless logged_in?
 
+    flash[:alert] = 'You are already signed in!'
+    redirect_to root_path
+  end
+
+  def require_authentication
+    return if logged_in?
+
+    flash[:alert] = 'You are not signed in!'
+    redirect_to root_path
+  end
 end

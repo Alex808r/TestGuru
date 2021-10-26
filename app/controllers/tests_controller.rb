@@ -21,7 +21,7 @@ class TestsController < ApplicationController
   def edit; end
 
   def create
-    @test = Test.new(test_params)
+    @test = current_user.author_tests.new(test_params)
     if @test.save
       redirect_to @test
     else
@@ -43,22 +43,21 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user = @current_user
-    @user.tests.push(@test)
-    redirect_to @user.test_passage(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.test_passage(@test)
   end
 
   private
 
-    def test_params
-      params.require(:test).permit(:title, :level, :category_id, :author_id)
-    end
+  def test_params
+    params.require(:test).permit(:title, :level, :category_id)
+  end
 
-    def set_test
-      @test = Test.find(params[:id])
-    end
+  def set_test
+    @test = Test.find(params[:id])
+  end
 
   def rescue_with_test_not_found
-    render plain: 'Test was not found'
+    render plain: 'Test was not found', status: :not_found, layout: false
   end
 end
