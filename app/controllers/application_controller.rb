@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
     def authenticate_user!
       unless current_user
         flash[:info] = "Authenticate please"
+        cookies[:requested_path] = request.fullpath
         # render plain: params.to_yaml
         redirect_to login_path
       end
