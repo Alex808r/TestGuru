@@ -4,12 +4,12 @@
 
   <p>
     <%= form.label :name %><br>
-    <%= form.text_field :name, id: :user_name%>
+    <%= form.text_field :name, id: :user_name, autocomplete: "name"  %>
   </p>
 
   <p>
     <%= form.label :email %><br>
-    <%= form.text_field :email, id: :user_email %>
+    <%= form.text_field :email, id: :user_email, autocomplete: "email" %>
   </p>
 
   <p>
