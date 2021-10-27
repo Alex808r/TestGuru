@@ -1,4 +1,5 @@
-<h1> The <%= @test_passage.test.title %> Test was Completed! </h1>
+<% provide(:title, "Result") %>
+<h1> The "<%= @test_passage.test.title %>" Test was Completed! </h1>
 
 <% if @test_passage.test_successful? %>
    <h3> The test successfully completed <b style="color:#00FF00"> <%= @test_passage.passage_percentes %></b>%</h3>
