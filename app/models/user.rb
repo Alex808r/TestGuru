@@ -1,9 +1,16 @@
 # frozen_string_literal: true
 
-require 'digest/sha1'
-
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = URI::MailTo::EMAIL_REGEXP
+
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :validatable,
+         :confirmable
 
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
@@ -11,14 +18,13 @@ class User < ApplicationRecord
 
   before_save :before_save_email_downcase
 
-  validates :name,  presence: true, length: { minimum: 3, maximum: 50 }
+  # validates :name,  presence: true, length: { minimum: 3, maximum: 50 }
   validates :email, presence: true,
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  validates :password, presence: true, if: proc { |user| user.password_digest.blank? }
-  validates :password, confirmation: true
+  # validates :password, presence: true, if: proc { |user| user.password_digest.blank? }
+  # validates :password, confirmation: true
 
-  has_secure_password
 
   def show_tests_by_level(level)
     tests.where(level: level)
