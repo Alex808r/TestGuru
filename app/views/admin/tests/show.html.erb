@@ -9,9 +9,9 @@
   <%= @test.level %>
 </p>
 
-<%= link_to "Edit", edit_test_path(@test) %>
+<%= link_to "Edit", edit_admin_test_path(@test) %>
 
-<%= link_to "Back", tests_path %>
+<%= link_to "Back", admin_tests_path %>
 
 <h3> Questions:  </h3>
 <table>
@@ -22,7 +22,9 @@
 
   </tr>
 
-  <%= render @questions %>
+  <%#= render @questions %>
+  <%= render partial: 'questions/question', collection: @test.questions %>
+
 
 </table>
 <br>
