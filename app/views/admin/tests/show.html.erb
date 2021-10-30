@@ -14,6 +14,7 @@
 <%= link_to "Back", admin_tests_path %>
 
 <h3> Questions:  </h3>
+<%= link_to "New Question", new_admin_test_question_path(@test) %><br>
 <table>
   <tr>
     <th> Id </th>
@@ -22,10 +23,9 @@
 
   </tr>
 
-  <%#= render @questions %>
-  <%= render partial: 'questions/question', collection: @test.questions %>
+  <%= render @questions %>
+  <%#= render partial: 'questions/question', collection: @test.questions %>
 
 
 </table>
 <br>
-<%= link_to "New Question", new_test_question_path(@test) %><br>

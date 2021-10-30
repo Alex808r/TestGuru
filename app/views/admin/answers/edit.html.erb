@@ -8,5 +8,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @answer %> |
-<%= link_to 'Back', question_path(@answer.question) %>
+<%= link_to 'Show', admin_answer_path(@answer) %> |
+<%= link_to 'Back', admin_question_path(@answer.question) %>

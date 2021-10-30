@@ -5,6 +5,21 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def after_sign_in_path_for(resource)
+    if resource.class == Admin
+      admin_tests_path
+    elsif resource.class == User
+      root_path
+    end
+  end
+
+
+  # def after_sign_in_path_for(resource)
+  #   resource.is_a?(Admin) ? admin_tests_path : root_path
+  #     # resource.admin? ? admin_tests_path : root_path
+  # end
+
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
