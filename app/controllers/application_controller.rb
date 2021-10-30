@@ -5,23 +5,28 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # def after_sign_in_path_for(resource)
+  #   if resource.class == Admin
+  #     welcome_flash
+  #     admin_tests_path
+  #   elsif resource.class == User
+  #     welcome_flash
+  #     root_path
+  #   end
+  # end
+
+  def welcome_flash
+    flash[:notice] = "Hello! #{current_user.first_name} #{current_user.last_name}"
+  end
+
   def after_sign_in_path_for(resource)
-    if resource.class == Admin
-      admin_tests_path
-    elsif resource.class == User
-      root_path
-    end
+    welcome_flash
+    resource.is_a?(Admin) ? admin_tests_path : root_path
   end
 
 
-  # def after_sign_in_path_for(resource)
-  #   resource.is_a?(Admin) ? admin_tests_path : root_path
-  #     # resource.admin? ? admin_tests_path : root_path
-  # end
-
-
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :first_name, :last_name])
   end
 
   def require_no_authentication
