@@ -2,7 +2,7 @@
 
 module Admin
   class TestsController < Admin::BaseController
-    before_action :set_test, only: %i[show edit update destroy start]
+    before_action :set_test, only: %i[show edit update destroy]
 
     # rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 

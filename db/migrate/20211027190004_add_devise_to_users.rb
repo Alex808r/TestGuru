@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Rails/Metrics/MethodLength
+
 class AddDeviseToUsers < ActiveRecord::Migration[6.1]
   def self.up
     change_table :users do |t|
@@ -56,3 +58,4 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
     change_column_default :users, :email, nil
   end
 end
+# rubocop:enable Rails/Metrics/MethodLength
