@@ -25,7 +25,6 @@ class User < ApplicationRecord
   # validates :password, presence: true, if: proc { |user| user.password_digest.blank? }
   # validates :password, confirmation: true
 
-
   def show_tests_by_level(level)
     tests.where(level: level)
   end
@@ -44,6 +43,4 @@ class User < ApplicationRecord
     self.email = email.downcase if email.present?
     # email.downcase! if email.present?
   end
-
-
 end

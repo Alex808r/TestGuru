@@ -24,9 +24,8 @@ class ApplicationController < ActionController::Base
     resource.is_a?(Admin) ? admin_tests_path : root_path
   end
 
-
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :first_name, :last_name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name first_name last_name])
   end
 
   def require_no_authentication
@@ -42,5 +41,4 @@ class ApplicationController < ActionController::Base
     flash[:alert] = 'You are not signed in!'
     redirect_to root_path
   end
-
 end
