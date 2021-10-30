@@ -22,8 +22,6 @@ class User < ApplicationRecord
   validates :email, presence: true,
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  # validates :password, presence: true, if: proc { |user| user.password_digest.blank? }
-  # validates :password, confirmation: true
 
   def show_tests_by_level(level)
     tests.where(level: level)

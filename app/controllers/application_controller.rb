@@ -1,17 +1,12 @@
 # frozen_string_literal: true
 
-class ApplicationController < ActionController::Base
+  class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
 
 
-  def welcome_flash
-    flash[:notice] = "Hello! #{current_user.first_name} #{current_user.last_name}"
-  end
-
   def after_sign_in_path_for(resource)
-    welcome_flash
     resource.is_a?(Admin) ? admin_tests_path : root_path
   end
 

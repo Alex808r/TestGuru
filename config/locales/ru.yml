@@ -1,8 +1,3 @@
 
 ru:
   hello: "Привет, мир"
-  devise:
-    sessions:
-      user:
-        signed_in: 'Welcome user, you are signed in.'
-        signed_out: 'Signed out successfully.'
