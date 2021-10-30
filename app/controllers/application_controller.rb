@@ -5,15 +5,6 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # def after_sign_in_path_for(resource)
-  #   if resource.class == Admin
-  #     welcome_flash
-  #     admin_tests_path
-  #   elsif resource.class == User
-  #     welcome_flash
-  #     root_path
-  #   end
-  # end
 
   def welcome_flash
     flash[:notice] = "Hello! #{current_user.first_name} #{current_user.last_name}"
