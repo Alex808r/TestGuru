@@ -22,7 +22,9 @@ class Admin::TestsController < Admin::BaseController
   def create
     @test = current_user.author_tests.new(test_params)
     if @test.save
+      flash[:notice] = t('.success')
       redirect_to admin_test_path(@test)
+      # redirect_to [:admin, @test]
     else
       render :new
     end
