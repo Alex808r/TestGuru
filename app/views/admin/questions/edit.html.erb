@@ -1,6 +1,6 @@
 <% provide(:title, "Edit Question") %>
 
-<h1> Edit <%= @question.body %> test</h1>
+<h1> <%= t('.edit', body: @question.body) %> test</h1>
 
 <%= render 'form' %>
 

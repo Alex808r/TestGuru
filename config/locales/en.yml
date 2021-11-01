@@ -6,17 +6,34 @@ en:
       test:
         create: "Create Test"
         update: "Update Test"
+      question:
+        create: "Create Question"
+        update: "Update Question"
+      answer:
+        create: "Create Answer"
+        update: "Update Answer"
+
     label:
       test:
         title: "Title"
         level: "Level"
         category_id: "Category"
+      question:
+        body: "Question: "
+      answer:
+        body: "Answer: "
+        correct: "Correct: "
 
   shared:
     errors:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    footer:
+      author: "Author: "
+      year: "Year :"
+    nav:
+      header: "TestGuru User Panel"
 
   tests:
     index:
@@ -27,18 +44,56 @@ en:
       action: "Action"
 
   admin:
+    nav:
+      header: "TestGuru Admin Panel"
     tests:
       index:
         header: "Tricky Tests"
+        title: "Title"
+        level: "Level"
+        count: "Count"
+        actions: "Actions"
       create:
         success: "The test was successfully created"
       new:
         header: "Create New Test"
+      show:
+        title: "Title: "
+        level: "Level: "
+        questions: "Questions: "
+        id: "Id"
+        body: "Question"
+        actions: "Actions"
+      edit:
+        edit: "Edit test: %{title} "
+    questions:
+      new:
+        header: "Create New Question"
+      show:
+        id: "Id: "
+        body: "Question: "
+        answers: "Answers: "
+      edit:
+        edit: "Edit question: %{body}"
+    answers:
+      new:
+        header: "New Answer"
+      show:
+        header: "Question"
+        answer: "Answer: "
+        correct: "Correct: "
+      edit:
+        edit: "Edit Answer"
 
   test_passages:
     result:
       header: "The %{title} test was Completed!"
-
+      success: "The test successfully completed"
+      fail: "The test failed"
+    show:
+      header: "Passing the %{title} test"
+      total_questions: "All questions: %{count}"
+      current_question: "Current question has a number %{number}"
 
   tests_mauiler:
     completed_test:

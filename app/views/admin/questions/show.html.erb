@@ -3,20 +3,20 @@
 <h1> <%= @question.test.title %></h1>
 
 <p>
-  <strong>Id:</strong>
+  <strong><%= t('.id') %></strong>
   <%= @question.id %>
 </p>
 
 
 <p>
-  <strong>Body:</strong>
+  <strong><%= t('.body') %></strong>
   <%= @question.body %>
 </p>
 
 <%= link_to "Edit", edit_admin_question_path %>
 <%= link_to "Back", admin_test_path(@question.test) %>
 
-<h2> Answers </h2>
+<h2> <%= t('.answers') %> </h2>
 
 <%= link_to "New Answer", new_admin_question_answer_path(@question) %>
 

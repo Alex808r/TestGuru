@@ -2,10 +2,11 @@
 <footer class="footer">
   <small> <%= link_to "Test Guru - Учебный проект в онлайн-школе Thinknetica",
                       "https://thinknetica.com/"%>
-    <p>
-     Author: <%= github_url("Alex808r", "TestGuru" ) %>
 
-     Year: <%= current_year %>
+    <p>
+     <%= t('.author') %> <%= github_url("Alex808r", "TestGuru" ) %>
+
+      <%= t('.year') %> <%= current_year %>
     </p>
   </small>
 </footer>

@@ -6,11 +6,22 @@ ru:
       test:
         create: "Создать Тест"
         update: "Обновить Тест"
+      question:
+        create: "Создать Вопрос"
+        update: "Обновить Вопрос"
+      answer:
+        create: "Создать Ответ"
+        update: "Обновить Ответ"
     label:
       test:
         title: "Заголовок"
         level: "Уровень"
         category_id: "Категория"
+      question:
+        body: "Введите вопрос: "
+      answer:
+        body: "Введите ответ: "
+        correct: "Правильный ответ: "
 
   shared:
     errors:
@@ -19,29 +30,72 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    footer:
+      author: "Автор: "
+      year: "Год: "
+    nav:
+      header: "Меню пользователя - TestGuru "
 
 
   tests:
     index:
       header: "Доступные тесты"
       title: "Заголовок"
-      level: "Уроверь"
+      level: "Уровень"
       count: "Количество вопросов"
       action: "Действие"
 
   admin:
+    nav:
+      header: "Меню администратора - TestGuru"
     tests:
       index:
         header: "Доступные тесты"
+        title: "Заголовок"
+        level: "Уровень"
+        count: "Количество вопросов"
+        actions: "Действия"
       create:
         success: "Тест успешно создан"
       new:
         header: "Создать новый Тест"
+      show:
+        title: "Заголовок: "
+        level: "Уровень: "
+        questions: "Вопросы: "
+        id: "Номер"
+        body: "Вопрос"
+        actions: "Действия"
+      edit:
+        edit: "Редактировать тест: %{title}"
+    questions:
+      new:
+        header: "Создать новый вопрос"
+      show:
+        id: "Номер: "
+        body: "Вопрос: "
+        answers: "Ответы: "
+      edit:
+        edit: "Редактировать вопрос: %{body}"
+    answers:
+      new:
+        header: "Новый ответ"
+      show:
+        header: "Вопрос"
+        answer: "Ответ: "
+        correct: "Правильный ответ: "
+      edit:
+        edit: "Редактировать ответ"
 
   test_passages:
     result:
-      header: "Тест %{title} успешно завершен"
-
+      header: "Тест %{title} завершен"
+      success: "Тест успешно завершен"
+      fail: "Тест не пройден"
+    show:
+      header: "Прохождение теста %{title}"
+      total_questions: "Всего вопросов: %{count}"
+      current_question: "Номер текущего вопроса: %{number}"
 
   tests_mauiler:
     completed_test:

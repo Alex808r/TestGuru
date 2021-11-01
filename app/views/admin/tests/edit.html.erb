@@ -1,6 +1,6 @@
 <% provide(:title, "Edit #{@test.title}") %>
 
-<h1> Edit <%= @test.title %> test</h1>
+<h1> <%= t('.edit', title: @test.title) %> </h1>
 
 <%= render 'form' %>
 
