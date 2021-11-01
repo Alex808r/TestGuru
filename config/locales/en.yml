@@ -98,3 +98,16 @@ en:
   tests_mauiler:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+  devise:
+    rerestration:
+      new:
+        header: "Become a Guru"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        password_charecters_min: "characters minimum"
+    sessions:
+      new:
+        header: "Enter the Guru Gates"
+        password: "Password"
+        remember_me: "Remember me"

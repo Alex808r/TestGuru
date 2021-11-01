@@ -3,6 +3,9 @@ ru:
 
   helpers:
     submit:
+      user:
+        registrations:
+          create: "Ssdfasdfa"
       test:
         create: "Создать Тест"
         update: "Обновить Тест"
@@ -100,3 +103,18 @@ ru:
   tests_mauiler:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+  devise:
+    registrations:
+      new:
+        header: "Стань Гуру"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        password_charecters_min: "символов минимум"
+    sessions:
+      new:
+        header: "Войди во врата Гуру"
+        email: "Почта"
+        password: "Пароль"
+        remember_me: "Запомнить меня"
+
