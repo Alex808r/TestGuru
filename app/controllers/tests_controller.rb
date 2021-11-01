@@ -61,3 +61,4 @@ class TestsController < ApplicationController
     render plain: 'Test was not found', status: :not_found, layout: false
   end
 end
+
