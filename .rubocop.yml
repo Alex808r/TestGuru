@@ -9,6 +9,9 @@ AllCops:
 Style/Documentation:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
 Rails/FilePath:
   EnforcedStyle: arguments
 

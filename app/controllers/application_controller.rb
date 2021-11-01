@@ -1,27 +1,16 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :logged_in?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
 
-  def authenticate_user!
-    unless current_user
-      flash[:info] = 'Authenticate please'
-      cookies[:user_requested_path] = request.fullpath
-      # render plain: params.to_yaml
-      redirect_to login_path
-    end
-
-    cookies[:email] = current_user&.email
+  def after_sign_in_path_for(resource)
+    resource.is_a?(Admin) ? admin_tests_path : root_path
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name first_name last_name])
   end
 
   def require_no_authentication
@@ -36,14 +25,5 @@ class ApplicationController < ActionController::Base
 
     flash[:alert] = 'You are not signed in!'
     redirect_to root_path
-  end
-
-  def log_in(user)
-    session[:user_id] = user.id
-  end
-
-  def log_out
-    session.delete(:user_id)
-    @current_user = nil
   end
 end
