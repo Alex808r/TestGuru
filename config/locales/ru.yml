@@ -5,9 +5,6 @@ ru:
     prompt:
       select: "Выберите"
     submit:
-      user:
-        registrations:
-          create: "Ssdfasdfa"
       test:
         create: "Создать Тест"
         update: "Обновить Тест"

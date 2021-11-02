@@ -10,19 +10,23 @@ ru:
         title: "Название"
         level: "Уроверь"
         category: "Категория"
+        author: "Автор"
       question:
         body: "Вопрос"
+        test: "Тест"
       answer:
         body: "Ответ"
+        question: "Вопрос"
       user:
         first_name: "Имя"
         last_name: "Фамилия"
         email: "Почта"
         password: "Пароль"
+        author: "Автор"
 
     errors:
       messages:
         blank: "не может быть пустым"
-        required: "должна существовать"
+        required: "должен существовать"
         invalid: "не соответствует формату"
         taken: "уже используется"

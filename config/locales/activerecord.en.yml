@@ -11,10 +11,13 @@ en:
         title: "Title"
         level: "Level"
         category: "Сategory"
+        author: "Author"
       question:
         body: "Question"
+        test: "Test"
       answer:
         body: "Answer"
+        question: "Question"
       user:
         first_name: "First name"
         last_name: "Last name"
@@ -24,6 +27,6 @@ en:
     errors:
       messages:
         blank: "can't be blank"
-        required: "must exist"
+        required: "must be exist"
         invalid: "is invalid"
         taken: "has already been taken"
