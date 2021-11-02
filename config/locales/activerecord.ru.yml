@@ -8,7 +8,7 @@ ru:
     attributes:
       test:
         title: "Название"
-        level: "Уроверь"
+        level: "Уровень"
         category: "Категория"
         author: "Автор"
       question:

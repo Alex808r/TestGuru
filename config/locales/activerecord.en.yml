@@ -5,7 +5,6 @@ en:
       question: "Question"
       answer: "Answer"
       user: "User"
-
     attributes:
       test:
         title: "Title"
