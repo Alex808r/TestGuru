@@ -2,6 +2,8 @@ en:
   hello: "Hello world"
 
   helpers:
+    prompt:
+      select: "Please select"
     submit:
       test:
         create: "Create Test"
@@ -55,6 +57,8 @@ en:
         actions: "Actions"
       create:
         success: "The test was successfully created"
+      update:
+        update_success: "The test was successfully updated"
       new:
         header: "Create New Test"
       show:

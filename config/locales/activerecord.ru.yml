@@ -2,11 +2,27 @@ ru:
   activerecord:
     models:
       test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+      user: "Пользователь"
     attributes:
       test:
         title: "Название"
+        level: "Уроверь"
         category: "Категория"
+      question:
+        body: "Вопрос"
+      answer:
+        body: "Ответ"
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Почта"
+        password: "Пароль"
+
     errors:
       messages:
         blank: "не может быть пустым"
         required: "должна существовать"
+        invalid: "не соответствует формату"
+        taken: "уже используется"
