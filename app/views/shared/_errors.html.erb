@@ -1,10 +1,14 @@
-<% if object.errors.present? %>
+<main class="container mt-3">
   <div>
-    <h2> <%= t('.header', count: object.errors.count) %>: </h2>
-    <ul>
-      <% object.errors.full_messages.each do |message| %>
-        <li> <%= message  %> </li>
-      <% end %>
-    </ul>
-  </div>
+      <% if object.errors.present? %>
+      <div>
+        <h2> <%= t('.header', count: object.errors.count) %>: </h2>
+        <ul>
+          <% object.errors.full_messages.each do |message| %>
+            <li> <%= message  %> </li>
+          <% end %>
+        </ul>
+      </div>
 <% end %>
+  </div>
+</main>

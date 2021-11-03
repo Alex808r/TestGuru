@@ -1,5 +1,17 @@
-<% flash.each do |name, msg| %>
-  <%= content_tag :p, msg, class: "flash #{name}" %>
-<% end %>
+<main class="container mt-3">
+  <div>
+    <% flash.each do |name, msg| %>
+      <% if name == "notice"  %>
+        <div>
+          <%= tag.div msg, class: "alert alert-info", role: 'alert' %>
+      <% else %>
+        <%= tag.div msg, class: "alert alert-#{name}", role: 'alert' %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</main>
+
+
 
 
