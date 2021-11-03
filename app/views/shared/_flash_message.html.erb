@@ -2,9 +2,9 @@
   <div>
     <% flash.each do |key, msg| %>
       <div class="alert <%= class_for_flash_message(key) %> ">
-      <%=msg %>
-      </div>  
-    <% end %>
+      <%= msg %>
+       </div>
+         <% end %>
   </div>
 </main>
 
