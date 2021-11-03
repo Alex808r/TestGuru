@@ -1,7 +1,7 @@
 <main class="container mt-3">
   <div>
     <% flash.each do |name, msg| %>
-      <% if name == "notice"  %>
+      <% if name == "notice" || name == "alert"   %>
         <div>
           <%= tag.div msg, class: "alert alert-info", role: 'alert' %>
       <% else %>
