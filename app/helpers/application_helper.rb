@@ -29,7 +29,7 @@ module ApplicationHelper
     when 'notice'
       'alert-info'
     else
-      flash_type.to_s
+      key.to_s
     end
   end
 
