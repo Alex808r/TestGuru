@@ -1,10 +1,10 @@
 <% provide(:title, "Result") %>
-<h1> The "<%= @test_passage.test.title %>" Test was Completed! </h1>
+<h1> <%= t('.header',title: @test_passage.test.title) %> </h1>
 
 <% if @test_passage.test_successful? %>
-   <h3> The test successfully completed <b style="color:#00FF00"> <%= @test_passage.passage_percentes %></b>%</h3>
+   <h3> <%= t('.success') %><b style="color:#00FF00"> <%= @test_passage.passage_percentes %></b>%</h3>
 <% else %>
-  <h3> The test failed <b style="color:#FF0000"> <%= @test_passage.passage_percentes %></b>%</h3>
+  <h3> <%= t('.fail') %> <b style="color:#FF0000"> <%= @test_passage.passage_percentes %></b>%</h3>
 <% end %>
 
-<%= link_to 'Back to tests', root_path %>
+<%= link_to t('shared.button.back_to_tests'), root_path %>

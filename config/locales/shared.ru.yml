@@ -1,0 +1,32 @@
+ru:
+  shared:
+    button:
+      start: "Старт"
+      next: "Следующий"
+      back_to_tests: "Назад к списку тестов"
+
+    links:
+      new_test: "Новый тест"
+      new_question: "Новый вопрос"
+      new_answer: "Новый ответ"
+      back: "Назад"
+      show: "Показать"
+      edit: "Редактировать"
+      delete: "Удалить"
+      logout: "Выход"
+      login: "Вход"
+      signup: "Регистрация"
+      main: "Главная страница"
+      forgot_your_password: "Забыли пароль?"
+      did_not_recieve_confirmation_instructions: "Не получили инструкции по подвтерждению?"
+      did_not_recieve_unlock_instructions: "Не получили инструкции по разблокировке?"
+      sign_in_with: "Войдите с помощью"
+
+
+    message:
+      new_question: "Создать новый вопрос"
+      edit_question: "Редактировать вопрос"
+      welcome: "Добро пожаловать, "
+      hello: "Привет, %{user_first_name}!"
+
+    delete_confirmation: "Вы уверены?"

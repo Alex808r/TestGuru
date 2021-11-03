@@ -1,6 +1,6 @@
 <% provide(:title, "Edit Answer") %>
 
-<h1>Edit Answer</h1>
+<h1><%= t('.edit') %></h1>
 
 <p>
   <%= @answer.question.body %>
@@ -8,5 +8,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', admin_answer_path(@answer) %> |
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<%= link_to t('shared.links.show'), admin_answer_path(@answer) %> |
+<%= link_to t('shared.links.back'), admin_question_path(@answer.question) %>

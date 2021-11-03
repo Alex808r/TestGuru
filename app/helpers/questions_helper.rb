@@ -3,9 +3,9 @@
 module QuestionsHelper
   def question_header(question)
     if question.new_record?
-      'Create new question'
+      t('shared.message.new_question')
     else
-      'Edit question'
+      t('shared.message.edit_question')
     end
   end
 end

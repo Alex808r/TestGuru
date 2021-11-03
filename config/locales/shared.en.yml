@@ -1,0 +1,32 @@
+en:
+  shared:
+    button:
+      start: "Start"
+      next: "Next"
+      back_to_tests: "Back to tests"
+
+    links:
+      new_test: "New Test"
+      new_question: "New Question"
+      new_answer: "New Answer"
+      back: "Back"
+      show: "Show"
+      edit: "Edit"
+      delete: "Delete"
+      logout: "Log out"
+      login: "Loh in"
+      signup: "Sign up"
+      main: "Home"
+      forgot_your_password: "Forgot forgot_your_password?"
+      did_not_recieve_confirmation_instructions: "did not recieve confirmation instructions?"
+      did_not_recieve_unlock_instructions: "did not receive unlock instructions?"
+      sign_in_with: "Sign in with"
+
+
+    message:
+      new_question: "Create new question"
+      edit_question: "Edit question"
+      welcome: "Welcome, "
+      hello: "Hello, %{user_first_name}!"
+
+    delete_confirmation: "Are you sure?"
