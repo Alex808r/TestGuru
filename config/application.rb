@@ -20,6 +20,9 @@ module TestGuru
     # Определяем язык. Нужно еще создать файл ru.yml в конфиге системе. по аналогии с en.yml
     config.i18n.default_locale = :ru
 
+    # Разрешенные локали, доступные приложению
+    I18n.available_locales = [:en, :ru]
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
