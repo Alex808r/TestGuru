@@ -1,5 +1,13 @@
-<% flash.each do |name, msg| %>
-  <%= content_tag :p, msg, class: "flash #{name}" %>
-<% end %>
+<main class="container mt-3">
+  <div>
+    <% flash.each do |key, msg| %>
+      <div class="alert alert-<%= class_for_flash_message(key) %> ">
+      <%= msg %>
+       </div>
+       <% end %>
+  </div>
+</main>
+
+
 
 

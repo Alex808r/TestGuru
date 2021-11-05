@@ -11,16 +11,16 @@
 </head>
 
 <body>
+  <%= render 'admin/nav' %>
 
-<p> <%= render 'admin/nav' %> </p>
+<div class="container">
+  <%= render 'shared/flash_message' %>
+  <%= yield %>
+  <%= render 'shared/footer' %>
+  <hr>
+  <%= debug(params) if Rails.env.development? %>
+</div>
 
-<%= render 'shared/flash_message' %>
 
-<%= yield %>
-<br>
-<p> <%#= render 'shared/footer' %> </p>
-
-<hr>
-<%= debug(params) if Rails.env.development? %>
 </body>
 </html>

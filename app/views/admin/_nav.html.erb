@@ -1,14 +1,15 @@
-<div class="nav nav-admin">
-  <span class="nav-admin title"><%= t('.header') %></span>
+<div class="container">
 
-  <div class="nav-admin user">
-    <%= link_to t('shared.links.main'), admin_tests_path %> |
-     <%= t('shared.message.welcome') %><b class="nav-admin user-email"><%= current_user.email %></b> Guru |
-    <%= link_to t('shared.links.logout'), destroy_user_session_path, method: :delete %>
-
-  </div>
-
-
-  <div class="nav-admin user">
-  </div>
+  <ul class="nav justify-content-end mt-3">
+    <li class="nav-item">
+      <%= link_to t('shared.links.main'), admin_tests_path, class: 'nav-link active' %>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active>"> <%= t('shared.message.welcome') %><%= current_user.email %> Guru </a>
+    </li>
+    <li>
+      <%= link_to t('shared.links.logout'), destroy_user_session_path, method: :delete, class: 'nav-link active' %>
+    </li>
+  </ul>
 </div>
+
