@@ -21,6 +21,7 @@ en:
       did_not_recieve_confirmation_instructions: "did not recieve confirmation instructions?"
       did_not_recieve_unlock_instructions: "did not receive unlock instructions?"
       sign_in_with: "Sign in with"
+      gist: "Gist Question"
 
 
     message:
