@@ -3,8 +3,6 @@ require 'dotenv/load'
 class GitHubClient
 
   ROOT_ENDPOINT = 'https://api.github.com'
-  # ACCESS_TOKEN = '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'
-  # ACCESS_TOKEN =
 
   def initialize
     @http_client = setup_http_client
