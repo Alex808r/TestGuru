@@ -43,6 +43,8 @@ gem 'jquery-rails'
 # Gists API NETWORKING
 gem 'faraday'
 
+# Configuration variables
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 group :development, :test do
