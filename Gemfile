@@ -41,8 +41,8 @@ gem 'bootstrap', '~> 5.0.1'
 gem 'jquery-rails'
 
 # Gists API NETWORKING
-gem 'faraday'
-
+# gem 'faraday'
+gem "octokit", "~> 4.0"
 # Configuration variables
 gem 'dotenv-rails', groups: [:development, :test]
 
