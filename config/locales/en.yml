@@ -88,6 +88,12 @@ en:
         correct: "Correct: "
       edit:
         edit: "Edit Answer"
+    gists:
+      index:
+        header: "Gists"
+        question: "Question"
+        gist_url: "Hash Gist"
+        user: "User email"
 
   test_passages:
     result:

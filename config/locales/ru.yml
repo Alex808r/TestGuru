@@ -91,6 +91,13 @@ ru:
         correct: "Правильный ответ: "
       edit:
         edit: "Редактировать ответ"
+    gists:
+      index:
+        header: "Список созданных Gists"
+        question: "Вопрос"
+        gist_url: "Hash Gist"
+        user: "email пользователя"
+
 
   test_passages:
     result:
