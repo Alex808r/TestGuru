@@ -33,7 +33,7 @@ class User < ApplicationRecord
   end
 
   def admin?
-    self.is_a?(Admin)
+    is_a?(Admin)
   end
 
   private
