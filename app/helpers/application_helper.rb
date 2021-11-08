@@ -37,7 +37,6 @@ module ApplicationHelper
   }.freeze
 
   def class_for_flash_message(key)
-    # (FLASH_TYPES_TO_CSS_CLASS[key.to_sym]).nil? ? key : FLASH_TYPES_TO_CSS_CLASS[key.to_sym]
     FLASH_TYPES_TO_CSS_CLASS.fetch(key.to_sym, key)
   end
 end
