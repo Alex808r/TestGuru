@@ -12,10 +12,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :gists, only: :create
+
   resources :test_passages, only: %i[show update] do
     member do
       get :result
-      post :gist
     end
   end
 

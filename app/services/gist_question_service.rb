@@ -14,10 +14,6 @@ class GistQuestionService
     ResultObject.new(response.html_url.present?, response.html_url, response.id)
   end
 
-  def success?
-    @client.http_client.last_response.status == 201
-  end
-
   private
 
   def gist_params
