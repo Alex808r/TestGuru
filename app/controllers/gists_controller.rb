@@ -4,7 +4,7 @@ class GistsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @test_passage = TestPassage.find(params[:id])
+    @test_passage = TestPassage.find(params[:test_passage_id])
     result = GistQuestionService.new(@test_passage.current_question).call
 
     if result.success?
