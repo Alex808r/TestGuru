@@ -40,6 +40,11 @@ gem 'rails-i18n', '~> 6.0.0'
 gem 'bootstrap', '~> 5.0.1'
 gem 'jquery-rails'
 
+# Gists API NETWORKING
+# gem 'faraday'
+gem 'octokit', '~> 4.0'
+# Configuration variables
+gem 'dotenv-rails', groups: %i[development test]
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

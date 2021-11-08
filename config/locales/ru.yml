@@ -91,6 +91,13 @@ ru:
         correct: "Правильный ответ: "
       edit:
         edit: "Редактировать ответ"
+    gists:
+      index:
+        header: "Список созданных Gists"
+        question: "Вопрос"
+        gist_url: "Hash Gist"
+        user: "email пользователя"
+
 
   test_passages:
     result:
@@ -101,6 +108,11 @@ ru:
       header: "Прохождение теста %{title}"
       total_questions: "Всего вопросов: %{count}"
       current_question: "Номер текущего вопроса: %{number}"
+
+  gists:
+    create:
+      success: "Gist успешно сохранён!"
+      failure: "Во время сохранения gist произошла ошибка"
 
   tests_mauiler:
     completed_test:
