@@ -39,6 +39,7 @@ gem 'rails-i18n', '~> 6.0.0'
 # UI & UX
 gem 'bootstrap', '~> 5.0.1'
 gem 'jquery-rails'
+gem 'octicons_helper'
 
 # Gists API NETWORKING
 # gem 'faraday'
