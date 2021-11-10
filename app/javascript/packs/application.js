@@ -16,6 +16,7 @@ import "jquery"
 import "utilities/sorting"
 import "utilities/password_check"
 import "utilities/form_inline"
+import "utilities/progress_bar"
 
 Rails.start()
 Turbolinks.start()
