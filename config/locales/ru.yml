@@ -73,6 +73,9 @@ ru:
         actions: "Действия"
       edit:
         edit: "Редактировать тест: %{title}"
+      form_inline:
+        submit: "OK"
+
     questions:
       new:
         header: "Создать новый вопрос"
