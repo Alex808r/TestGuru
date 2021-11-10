@@ -107,6 +107,8 @@ en:
       header: "Passing the %{title} test"
       total_questions: "All questions: %{count}"
       current_question: "Current question has a number %{number}"
+      in_development: "New test coming soon"
+      try_other: "Try other tests"
 
   gists:
     create:

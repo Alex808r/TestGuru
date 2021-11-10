@@ -111,6 +111,8 @@ ru:
       header: "Прохождение теста %{title}"
       total_questions: "Всего вопросов: %{count}"
       current_question: "Номер текущего вопроса: %{number}"
+      in_development: "Скоро тут появится новый тест"
+      try_other: "Попробуйте пройти другой тест"
 
   gists:
     create:
