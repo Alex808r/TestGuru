@@ -1,14 +1,16 @@
 <main class="container mt-3">
   <div>
-      <% if object.errors.present? %>
-      <div>
-        <h2> <%= t('.header', count: object.errors.count) %>: </h2>
-        <ul>
-          <% object.errors.full_messages.each do |message| %>
-            <li> <%= message  %> </li>
-          <% end %>
-        </ul>
-      </div>
-<% end %>
+    <% if object.present? && object.errors.any? %>
+      <%= content_tag :div, class: 'resource-errors', data: { object_id: object.id } do %>
+        <div>
+          <h2> <%= t('.header', count: object.errors.count) %>: </h2>
+          <ul>
+            <% object.errors.full_messages.each do |message| %>
+              <li> <%= message  %> </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </main>
