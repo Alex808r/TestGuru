@@ -6,6 +6,7 @@ class CreateFeedbacks < ActiveRecord::Migration[6.1]
       t.string :header, null: false
       t.string :content,null: false
 
+
       t.timestamps
     end
   end

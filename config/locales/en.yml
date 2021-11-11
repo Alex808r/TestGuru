@@ -131,3 +131,13 @@ en:
         header: "Enter the Guru Gates"
         password: "Password"
         remember_me: "Remember me"
+
+
+  feedbacks:
+    create:
+      success: "Your review has been sent, we will contact you shortly."
+    form:
+      user_name: "User name"
+      email: "Email"
+      header: "Header"
+      content: "Content"

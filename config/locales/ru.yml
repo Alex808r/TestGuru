@@ -136,3 +136,12 @@ ru:
         email: "Почта"
         password: "Пароль"
         remember_me: "Запомнить меня"
+
+  feedbacks:
+    create:
+      success: "Ваш отзыв отправлен, скором мы свяжемся с Вами."
+    form:
+      user_name: "Имя"
+      email: "Email"
+      header: "Тема"
+      content: "Обращение"

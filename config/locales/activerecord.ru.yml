@@ -5,6 +5,7 @@ ru:
       question: "Вопрос"
       answer: "Ответ"
       user: "Пользователь"
+      feedback: "Отзыв"
     attributes:
       test:
         title: "Название"
@@ -23,6 +24,11 @@ ru:
         email: "Почта"
         password: "Пароль"
         author: "Автор"
+      feedback:
+        user_name: "Имя"
+        email: "email"
+        header: "Тема"
+        content: "Обращение"
 
     errors:
       messages:

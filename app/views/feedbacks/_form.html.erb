@@ -1,0 +1,37 @@
+<div class="card border-primary">
+  <div class="card-header">
+    <%= t('.feedback') %>
+  </div>
+  <div class="card-body">
+    <%= form_with model: @feedback, local: true do |form| %>
+      <%= render 'shared/errors', object: @feedback%>
+
+      <div class="form-group">
+        <%= form.label :user_name, t('.user_name') %>
+        <% if current_user %>
+         <p> <%= form.text_field :user_name, class: 'form-control', value: current_user.first_name %> </p>
+        <% else %>
+          <%= form.text_field :user_name, class: 'form-control' %>
+        <% end %>
+          <%= form.label :email, t('.email') %>
+        <% if current_user %>
+         <p> <%= form.email_field :email, class: 'form-control', value: current_user.email %> </p>
+        <% else %>
+          <%= form.email_field :email, class: 'form-control' %>
+        <% end %>
+
+        <p>
+        <%= form.label :header, t('.header') %>
+        <%= form.text_field :header, class: 'form-control' %>
+        </p>
+
+        <%= form.label :content, t('.content') %>
+        <%= form.text_area :content, class: 'form-control' %>
+      </div>
+      <br>
+      <p>
+        <%= form.submit t('shared.button.send'), class: 'btn btn-primary'  %>
+      </p>
+    <% end %>
+  </div>
+</div>
