@@ -49,7 +49,7 @@ gem 'octicons_helper'
 # gem 'faraday'
 gem 'octokit', '~> 4.0'
 # Configuration variables
-gem 'dotenv-rails', groups: %i[development test]
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
