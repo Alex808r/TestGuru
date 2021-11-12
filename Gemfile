@@ -8,7 +8,11 @@ ruby '2.7.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+# gem 'sqlite3', '~> 1.4'
+
+# Use PostgreSQL
+gem 'pg'
+
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -45,7 +49,7 @@ gem 'octicons_helper'
 # gem 'faraday'
 gem 'octokit', '~> 4.0'
 # Configuration variables
-gem 'dotenv-rails', groups: %i[development test]
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

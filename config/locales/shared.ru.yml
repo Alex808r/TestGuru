@@ -4,6 +4,7 @@ ru:
       start: "Старт"
       next: "Следующий"
       back_to_tests: "Назад к списку тестов"
+      send: "Отправить"
 
     links:
       new_test: "Новый тест"
@@ -23,6 +24,7 @@ ru:
       sign_in_with: "Войдите с помощью"
       new_gist: "Создать Gist вопроса"
       gists_list: "Список всех Gist"
+      feedback: "Форма обратной связи"
 
 
     message:

@@ -111,6 +111,8 @@ ru:
       header: "Прохождение теста %{title}"
       total_questions: "Всего вопросов: %{count}"
       current_question: "Номер текущего вопроса: %{number}"
+      in_development: "Скоро тут появится новый тест"
+      try_other: "Попробуйте пройти другой тест"
 
   gists:
     create:
@@ -134,3 +136,12 @@ ru:
         email: "Почта"
         password: "Пароль"
         remember_me: "Запомнить меня"
+
+  feedbacks:
+    create:
+      success: "Ваш отзыв отправлен, скором мы свяжемся с Вами."
+    form:
+      user_name: "Имя"
+      email: "Email"
+      header: "Тема"
+      content: "Обращение"

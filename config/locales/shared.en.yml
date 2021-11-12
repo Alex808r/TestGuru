@@ -4,6 +4,7 @@ en:
       start: "Start"
       next: "Next"
       back_to_tests: "Back to tests"
+      send: "Send"
 
     links:
       new_test: "New Test"
@@ -23,6 +24,7 @@ en:
       sign_in_with: "Sign in with"
       new_gist: "Gist Question"
       gists_list: "All Gists"
+      feedback: "Feedback form"
 
 
     message:
