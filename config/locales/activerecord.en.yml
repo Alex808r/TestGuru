@@ -6,6 +6,7 @@ en:
       answer: "Answer"
       user: "User"
       feedback: "Feedback"
+      badge: "Badge"
     attributes:
       test:
         title: "Title"
@@ -28,6 +29,11 @@ en:
         email: "email"
         header: "Header"
         content: "Content"
+      badge:
+        title: "Title"
+        image_url: "Image"
+        rule: "Rule"
+        parameter: "Parameter"
 
     errors:
       messages:

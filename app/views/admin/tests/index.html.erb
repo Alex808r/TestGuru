@@ -2,8 +2,10 @@
 
 <h1 class="display-3"> <%= t('.header') %> </h1>
 
-<p> <%= link_to t('shared.links.new_test'), new_admin_test_path, class: "btn btn-primary btn-lg" %>
-    <%= link_to t('shared.links.gists_list'), admin_gists_path, class: "btn btn-primary btn-lg" %>
+<p>
+  <%= link_to t('shared.links.new_test'), new_admin_test_path, class: "btn btn-primary btn-lg" %>
+  <%= link_to t('shared.links.gists_list'), admin_gists_path, class: "btn btn-primary btn-lg" %>
+  <%= link_to t('shared.links.badges_list'), admin_badges_path, class: "btn btn-primary btn-lg" %>
 </p>
 
 <%= render 'shared/errors', object: @test %>

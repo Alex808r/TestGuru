@@ -1,0 +1,14 @@
+<tr>
+  <td scope="col" class="text-center"><%= badge.title %></td>
+  <td scope="col" class="text-center"><%= badge.image_url %></td>
+  <td scope="col" class="text-center"><%= badge.rule %></td>
+  <td scope="col" class="text-center"><%= badge.parameter %></td>
+  <td scope="col" class="text-center"><%= link_to t('shared.links.show'), admin_badge_path(badge) %></td>
+  <td scope="col" class="text-center"><%= link_to t('shared.links.edit'), edit_admin_badge_path(badge) %></td>
+  <td scope="col" class="text-center">
+    <%= link_to t('shared.links.delete'),
+                admin_badge_path(badge),
+                method: :delete,
+                data: { confirm: t('shared.delete_confirmation') } %>
+  </td>
+</tr>

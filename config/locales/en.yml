@@ -97,6 +97,23 @@ en:
         question: "Question"
         gist_url: "Hash Gist"
         user: "User email"
+    badges:
+      index:
+        header: "Tricky Badges"
+        title: "Title"
+        image_url: "Image"
+        rule: "Rule"
+        parameter: "Parameter"
+        actions: "Actions"
+      new:
+        header: "New Badge"
+      show:
+        title: "Title"
+        image_url: "Image"
+        rule: "Rule"
+        parameter: "Parameter"
+      edit:
+        edit: "Edit Badge: %{title}"
 
   test_passages:
     result:
