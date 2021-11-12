@@ -9,6 +9,12 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
 
+  scope :successfull, -> { where(success: true) }
+
+  def success_true
+    self.update(success: true)
+  end
+
   def total_questions
     test.questions.count
   end
