@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :gists, only: :create
   resources :feedbacks, only: %i[new create]
+  resources :badges, only: %i[index]
 
   resources :test_passages, only: %i[show update] do
     member do
