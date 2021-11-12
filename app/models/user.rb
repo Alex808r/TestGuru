@@ -16,6 +16,9 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :author_tests, class_name: 'Test', foreign_key: :author_id, dependent: :destroy, inverse_of: :author
   has_many :gists, dependent: :destroy
+  has_many :user_badges, dependent: :destroy
+  has_many :badges, through: :user_badges
+
 
   before_save :before_save_email_downcase
 
