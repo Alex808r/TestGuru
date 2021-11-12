@@ -29,7 +29,7 @@ class Admin::BadgesController < Admin::BaseController
     if @badge.update(badge_params)
       redirect_to admin_badge_path(@badge), notice: "Бейдж успешно обновлен"
     else
-      render :edit
+      render :new
     end
   end
 
