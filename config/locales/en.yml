@@ -44,6 +44,12 @@ en:
       level: "Level"
       count: "Count"
       action: "Action"
+  badges:
+    index:
+      header: "Badges"
+      title: "Title"
+      image_url: "Image"
+      date: "Date"
 
   admin:
     nav:
@@ -126,6 +132,9 @@ en:
       current_question: "Current question has a number %{number}"
       in_development: "New test coming soon"
       try_other: "Try other tests"
+    update:
+      all_badges: " Your Badges"
+      recieved: "Badge received!"
 
   gists:
     create:

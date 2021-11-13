@@ -27,6 +27,8 @@ ru:
       feedback: "Форма обратной связи"
       badges_list: "Cписок Бейджей"
       new_badge: "Новый Бейдж"
+      user_badges: "Ваши достижения"
+      badges_existing: "Посмотреть все возможные достижения"
 
 
     message:

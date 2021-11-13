@@ -27,6 +27,8 @@ en:
       feedback: "Feedback form"
       badges_list: "All Badges"
       new_badge: "New Вadge"
+      user_badges: "Your Badges"
+      badges_existing: "Сheck Еxisting badges"
 
 
     message:

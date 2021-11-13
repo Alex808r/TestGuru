@@ -46,7 +46,18 @@ ru:
       title: "Заголовок"
       level: "Уровень"
       count: "Количество вопросов"
-      action: "Действие"
+      actions: "Действие"
+  badges:
+    index:
+      header: "Достижения"
+      title: "Название"
+      image_url: "Изображение"
+      date: "Дата получения"
+    all_badges:
+      header: 'Список возможных достижений'
+      title: "Название"
+      img_url: "Изображение"
+
 
   admin:
     nav:
@@ -133,6 +144,9 @@ ru:
       current_question: "Номер текущего вопроса: %{number}"
       in_development: "Скоро тут появится новый тест"
       try_other: "Попробуйте пройти другой тест"
+    update:
+      all_badges: " Ваши Badges"
+      recieved: "Badge получен!"
 
   gists:
     create:
