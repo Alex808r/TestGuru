@@ -4,6 +4,6 @@ class BadgesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @user_badges = current_user.badges.order(created_at: :desc)
+    @badges = current_user.badges.order(created_at: :desc)
   end
 end
