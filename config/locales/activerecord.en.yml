@@ -24,6 +24,7 @@ en:
         last_name: "Last name"
         email: "Email"
         password: "Password"
+        author: "Author"
       feedback:
         user_name: "Name"
         email: "email"
