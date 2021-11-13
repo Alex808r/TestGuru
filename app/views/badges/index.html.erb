@@ -1,0 +1,25 @@
+<p>
+  <%= link_to t('shared.links.badges_existing'), all_badges_badge_path(current_user.id),class: "btn btn-primary" %>
+</p>
+
+<h2 class="display-4"><%= t('.header') %></h2>
+
+<table class="table table-hover">
+  <tr class="table-primary">
+    <th class="align-middle"><%= t('.title') %></th>
+    <th class="align-middle"><%= t('.image_url') %></th>
+    <th class="align-middle"><%= t('.date') %></th>
+  </tr>
+  <%= render current_user.badges  %>
+</table>
+
+<p>
+  <%= link_to t('shared.links.back'), root_path %>
+</p>
+
+
+
+
+
+
+
