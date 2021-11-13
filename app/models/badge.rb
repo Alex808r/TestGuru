@@ -1,5 +1,5 @@
 class Badge < ApplicationRecord
-  BADGES_RULES = %w[all_in_category on_first_try all_level_1_tests].freeze
+  BADGES_RULES = %w[all_in_category on_first_try all_tests_by_level].freeze
 
   has_many :user_badges, dependent: :destroy
   has_many :users, through: :user_badges

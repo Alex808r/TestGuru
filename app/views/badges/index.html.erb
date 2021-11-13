@@ -10,7 +10,7 @@
     <th class="align-middle"><%= t('.image_url') %></th>
     <th class="align-middle"><%= t('.date') %></th>
   </tr>
-  <%= render current_user.badges  %>
+  <%= render current_user.badges.order(created_at: :desc)  %>
 </table>
 
 <p>
