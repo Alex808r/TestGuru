@@ -128,6 +128,10 @@ ru:
         parameter: "Параметр"
       edit:
         edit: "Редактировать Бейдж: %{title}"
+      create:
+        success: "Бейдж успешно создан"
+      update:
+        success: "Бейдж успешно обновлен"
 
 
 

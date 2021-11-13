@@ -120,6 +120,11 @@ en:
         parameter: "Parameter"
       edit:
         edit: "Edit Badge: %{title}"
+      create:
+        success: "Badge created"
+      update:
+        success: "Badge updated"
+
 
   test_passages:
     result:

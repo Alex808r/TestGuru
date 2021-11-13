@@ -18,7 +18,7 @@ class Admin::BadgesController < Admin::BaseController
   def create
     @badge = Badge.new(badge_params)
     if @badge.save
-      redirect_to [:admin, @badge], notice: "Бейдж успешно создан"
+      redirect_to [:admin, @badge], notice: t('.success')
       # redirect_to admin_badge_path(@badge), notice: t('.success')
     else
       render :new
@@ -27,7 +27,7 @@ class Admin::BadgesController < Admin::BaseController
 
   def update
     if @badge.update(badge_params)
-      redirect_to admin_badge_path(@badge), notice: "Бейдж успешно обновлен"
+      redirect_to admin_badge_path(@badge), notice: t('.success')
     else
       render :new
     end
