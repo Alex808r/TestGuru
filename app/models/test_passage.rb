@@ -12,7 +12,7 @@ class TestPassage < ApplicationRecord
   scope :successfull, -> { where(success: true) }
 
   def success_true
-    self.update(success: true)
+    update(success: true)
   end
 
   def total_questions
@@ -49,7 +49,8 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    return if self.current_question.answers.empty?
+    return if current_question.answers.empty?
+
     # correct_answers.ids.sort == answer_ids&.map(&:to_i)&.sort
     correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
   end

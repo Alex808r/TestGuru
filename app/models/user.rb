@@ -19,7 +19,6 @@ class User < ApplicationRecord
   has_many :user_badges, dependent: :destroy
   has_many :badges, through: :user_badges
 
-
   before_save :before_save_email_downcase
 
   # validates :name,  presence: true, length: { minimum: 3, maximum: 50 }

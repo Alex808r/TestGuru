@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Badge < ApplicationRecord
   BADGES_RULES = %w[all_in_category on_first_try all_tests_by_level].freeze
 
