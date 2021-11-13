@@ -15,6 +15,7 @@ ru:
       answer:
         create: "Создать Ответ"
         update: "Обновить Ответ"
+
     label:
       test:
         title: "Заголовок"
@@ -39,7 +40,6 @@ ru:
     nav:
       header: "Меню пользователя - TestGuru "
 
-
   tests:
     index:
       header: "Доступные тесты"
@@ -57,7 +57,6 @@ ru:
       header: 'Список возможных достижений'
       title: "Название"
       img_url: "Изображение"
-
 
   admin:
     nav:
@@ -132,9 +131,6 @@ ru:
         success: "Бейдж успешно создан"
       update:
         success: "Бейдж успешно обновлен"
-
-
-
 
 
   test_passages:

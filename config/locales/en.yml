@@ -8,6 +8,7 @@ en:
       test:
         create: "Create Test"
         update: "Update Test"
+
       question:
         create: "Create Question"
         update: "Update Question"
@@ -37,6 +38,8 @@ en:
     nav:
       header: "TestGuru User Panel"
 
+
+
   tests:
     index:
       header: "Tricky Tests"
@@ -50,6 +53,10 @@ en:
       title: "Title"
       image_url: "Image"
       date: "Date"
+    all_badges:
+      header: 'List of possible achievements'
+      title: "Title"
+      img_url: "Image"
 
   admin:
     nav:
@@ -160,9 +167,9 @@ en:
     sessions:
       new:
         header: "Enter the Guru Gates"
+        email: "Email"
         password: "Password"
         remember_me: "Remember me"
-
 
   feedbacks:
     create:
