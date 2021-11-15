@@ -13,8 +13,7 @@
 
   <p>
     <%= form.label :rule %><br>
-    <%#= form.select :rule, Badge::BADGES_RULES, {prompt: true}, class: "form-select" %>
-    <%= form.select :rule, Badge.rules.keys, {prompt: true}, class: "form-select" %>
+    <%= form.select :rule, Badge.rules.map { |key, value| [value.humanize, key] }, {prompt: true}, class: "form-select" %>
   </p>
 
   <p>
@@ -23,5 +22,4 @@
   </p>
 
   <p> <%= form.submit %> </p>
-  <p> <%#= form.submit(@test.new_record? ? "Create" : "Update") %> </p>
 <% end %>
