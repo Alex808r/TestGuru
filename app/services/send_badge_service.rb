@@ -7,16 +7,10 @@ class SendBadgeService
     @test_passage = test_passage
     @user = test_passage.user
     @test = test_passage.test
-    @recieved = false
   end
 
   def call
-    Badge.find_each do |badge|
-      if send(badge.rule, badge.parameter, badge)
-        @user.badges << badge
-        @recieved = true
-      end
-    end
+    Badge.select { |badge| send(badge.rule, badge.parameter, badge) }
   end
 
   def all_in_category?(category_title, badge)
@@ -50,4 +44,5 @@ class SendBadgeService
       TestPassage.where(user_id: @user.id, test_id: @test.id).count == 1 && @test.title == badge.parameter
     end
   end
+
 end

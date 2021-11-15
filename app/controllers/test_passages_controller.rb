@@ -12,14 +12,14 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
 
-      result = SendBadgeService.new(@test_passage)
-      result.call
-      # result = SendBadgeService.new(@test_passage).call ошибка nil
-        if result.recieved
+      result = SendBadgeService.new(@test_passage).call
+
+      if result.present?
+        current_user.badges << result
           flash[:notice] =
             "#{t('.recieved')} #{view_context.link_to(t('.all_badges'), badges_path, target: '_blank',
                                                                                      rel: 'noopener').html_safe} "
-        end
+      end
 
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
