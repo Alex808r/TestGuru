@@ -10,7 +10,7 @@
 
 return if User.exists? && Test.exists? && Category.exists?
 
-users = User.create([
+users = User.create!([
                       { first_name: 'Main', last_name: 'Admin', name: 'Main Admin',
                         email: 'admin@admin.com', password: '123456', type: 'Admin' }
                     ])
@@ -20,7 +20,7 @@ categories = Category.create!([
                                 { title: 'Frontend' }
                               ])
 
-tests = Test.create([
+tests = Test.create!([
                       { title: 'Ruby 0',  level: 0, category: categories[0], author: users[0] },
                       { title: 'Rails 2', level: 2, category: categories[0], author: users[0] },
                       { title: 'HTML',    level: 1, category: categories[1], author: users[0] }
