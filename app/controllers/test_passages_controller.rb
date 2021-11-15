@@ -12,6 +12,8 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
 
+      @test_passage.success_true if @test_passage.test_successful?
+
       result = SendBadgeService.new(@test_passage).call
 
       if result.present?
