@@ -14,10 +14,10 @@ class TestPassagesController < ApplicationController
 
       @test_passage.success_true if @test_passage.test_successful?
 
-      result = SendBadgeService.new(@test_passage).call
+      badge = SendBadgeService.new(@test_passage).call
 
-      if result.present?
-        current_user.badges << result
+      if badge.present?
+        current_user.badges << badge
           flash[:notice] =
             "#{t('.recieved')} #{view_context.link_to(t('.all_badges'), badges_path, target: '_blank',
                                                                                      rel: 'noopener').html_safe} "
