@@ -13,7 +13,8 @@
 
   <p>
     <%= form.label :rule %><br>
-    <%= form.select :rule, Badge::BADGES_RULES, {prompt: true}, class: "form-select" %>
+    <%#= form.select :rule, Badge::BADGES_RULES, {prompt: true}, class: "form-select" %>
+    <%= form.select :rule, Badge.rules.keys, {prompt: true}, class: "form-select" %>
   </p>
 
   <p>
