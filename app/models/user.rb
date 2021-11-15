@@ -30,6 +30,10 @@ class User < ApplicationRecord
     tests.where(level: level)
   end
 
+  def show_tests_by_category(category)
+    tests.where(category: category)
+  end
+
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
