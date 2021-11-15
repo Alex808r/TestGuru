@@ -49,7 +49,7 @@ en:
       action: "Action"
   badges:
     index:
-      header: "Badges"
+      header: "Your Badges"
       title: "Title"
       image_url: "Image"
       date: "Date"

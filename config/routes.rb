@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   resources :feedbacks, only: %i[new create]
 
   resources :badges, only: %i[index] do
-    member do
-      get :all_badges
-    end
+    # member do
+    #   get :all_badges
+    # end
   end
 
   resources :test_passages, only: %i[show update] do

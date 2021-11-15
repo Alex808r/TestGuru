@@ -49,7 +49,7 @@ ru:
       actions: "Действие"
   badges:
     index:
-      header: "Достижения"
+      header: "Ваши Достижения"
       title: "Название"
       image_url: "Изображение"
       date: "Дата получения"
