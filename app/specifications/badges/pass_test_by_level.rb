@@ -3,15 +3,17 @@
 module Badges
   class PassTestByLevel < BadgeRuleSpecification
     def is_satiesfies?
-      @level = @value
+      @level = @value.to_i
       return false unless @test_passage.test.level == @level
-      @test_ids = Test.where(level: @level).ids
-      @test_ids.size == count_tests_success(@test_ids)
+      Test.where(level: @level).size == passed_test_by_level.size
     end
 
-    def count_tests_success(test_ids)
-      @user = @test_passage.user
-      @user.test_passages.where(test_id: test_ids).successfull.uniq.count
+    def passed_test_by_level
+      Test
+        .where(level: @level)
+        .joins(:test_passages)
+        .where(test_passages: { user: @test_passage.user, success: true })
+        .distinct
     end
   end
 end

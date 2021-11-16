@@ -16,7 +16,6 @@ class TestPassagesController < ApplicationController
 
       badge = SendBadgeService.new(@test_passage).call
       if badge.present?
-        #current_user.badges << badge
           flash[:notice] =
             "#{t('.recieved')} #{view_context.link_to(t('.all_badges'), badges_path, target: '_blank',
                                                                                      rel: 'noopener').html_safe} "

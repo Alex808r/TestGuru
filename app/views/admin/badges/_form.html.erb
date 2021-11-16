@@ -13,8 +13,7 @@
 
   <p>
     <%= form.label :rule %><br>
-
-    <%#= form.select :rule, SendBadgeService::RULE, {prompt: true}, class: "form-select" %>
+    <%#= form.select :rule, SendBadgeService::RULE.map { |key, value| [key, key]}, {prompt: true},  class: "form-select" %>
     <%= form.select :rule, Badge.rules.map { |key, value| [value.humanize, key] }, {prompt: true}, class: "form-select" %>
   </p>
 

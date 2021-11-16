@@ -2,14 +2,20 @@
 
 module Badges
   class PassTestByCategory < BadgeRuleSpecification
+
     def is_satiesfies?
-      @category = Category.where(title: @value).take
-      return false unless @test_passage.test.category == @category
-      all_tests_in_category = Test.show_tests_by_category(@category).count
-      users_tests_by_category = TestPassage.successfull.joins(:test)
-                                 .where(user_id: @test_passage.user.id, tests: { category_id: @test_passage.test.category.id } )
-                                 .select(:test_id).distinct.count
-      all_tests_in_category == users_tests_by_category
+      @category = Category.where(title: @value).first
+      return false unless  @test_passage.test.category == @category
+      Test.where(category: @category).size == passed_test_by_category.size
     end
+
+    def passed_test_by_category
+      Test
+        .where(category: @category)
+        .joins(:test_passages)
+        .where(test_passages: { user: @test_passage.user, success: true })
+        .distinct
+    end
+
   end
 end
