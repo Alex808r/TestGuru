@@ -2,7 +2,7 @@
 
 class Badge < ApplicationRecord
 
-  enum rules: {
+  enum rule: {
     all_in_category?: "all_in_category",
     on_first_try?: "on_first_try",
     all_tests_by_level?: "all_tests_by_level"
