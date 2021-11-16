@@ -1,0 +1,26 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+
+  <%= render "shared/errors", object: @badge %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, id: :badge_title, class: "form-control" %>
+  </p>
+
+  <p>
+    <%= form.label :image_url %><br>
+    <%= form.text_field :image_url, id: :badge_image_url, class: "form-control" %>
+  </p>
+
+  <p>
+    <%= form.label :rule %><br>
+    <%#= form.select :rule, SendBadgeService::RULE.map { |key, value| [key, key]}, {prompt: true},  class: "form-select" %>
+    <%= form.select :rule, Badge.rules.map { |key, value| [value.humanize, key] }, {prompt: true}, class: "form-select" %>
+  </p>
+
+  <p>
+    <%= form.label :parameter %><br>
+    <%= form.text_field :parameter, id: :badge_parameter, class: "form-control" %>
+  </p>
+
+  <p> <%= form.submit %> </p>
+<% end %>

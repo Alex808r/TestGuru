@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class FeedbacksMailerTest < ActionMailer::TestCase
+class UserBadgeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

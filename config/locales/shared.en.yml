@@ -25,6 +25,10 @@ en:
       new_gist: "Gist Question"
       gists_list: "All Gists"
       feedback: "Feedback form"
+      badges_list: "All Badges"
+      new_badge: "New Вadge"
+      user_badges: "Your Badges"
+      badges_existing: "Сheck Еxisting badges"
 
 
     message:

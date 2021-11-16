@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :author_tests, class_name: 'Test', foreign_key: :author_id, dependent: :destroy, inverse_of: :author
   has_many :gists, dependent: :destroy
+  has_many :user_badges, dependent: :destroy
+  has_many :badges, through: :user_badges
 
   before_save :before_save_email_downcase
 
@@ -26,6 +28,10 @@ class User < ApplicationRecord
 
   def show_tests_by_level(level)
     tests.where(level: level)
+  end
+
+  def show_tests_by_category(category)
+    tests.where(category: category)
   end
 
   def test_passage(test)

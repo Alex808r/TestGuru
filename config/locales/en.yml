@@ -8,6 +8,7 @@ en:
       test:
         create: "Create Test"
         update: "Update Test"
+
       question:
         create: "Create Question"
         update: "Update Question"
@@ -37,6 +38,8 @@ en:
     nav:
       header: "TestGuru User Panel"
 
+
+
   tests:
     index:
       header: "Tricky Tests"
@@ -44,6 +47,16 @@ en:
       level: "Level"
       count: "Count"
       action: "Action"
+  badges:
+    index:
+      header: "Your Badges"
+      title: "Title"
+      image_url: "Image"
+      date: "Date"
+    all_badges:
+      header: 'List of possible achievements'
+      title: "Title"
+      img_url: "Image"
 
   admin:
     nav:
@@ -97,6 +110,28 @@ en:
         question: "Question"
         gist_url: "Hash Gist"
         user: "User email"
+    badges:
+      index:
+        header: "Tricky Badges"
+        title: "Title"
+        image_url: "Image"
+        rule: "Rule"
+        parameter: "Parameter"
+        actions: "Actions"
+      new:
+        header: "New Badge"
+      show:
+        title: "Title"
+        image_url: "Image"
+        rule: "Rule"
+        parameter: "Parameter"
+      edit:
+        edit: "Edit Badge: %{title}"
+      create:
+        success: "Badge created"
+      update:
+        success: "Badge updated"
+
 
   test_passages:
     result:
@@ -109,6 +144,9 @@ en:
       current_question: "Current question has a number %{number}"
       in_development: "New test coming soon"
       try_other: "Try other tests"
+    update:
+      all_badges: " Your Badges"
+      recieved: "Badge received!"
 
   gists:
     create:
@@ -129,9 +167,9 @@ en:
     sessions:
       new:
         header: "Enter the Guru Gates"
+        email: "Email"
         password: "Password"
         remember_me: "Remember me"
-
 
   feedbacks:
     create:

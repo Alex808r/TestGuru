@@ -25,6 +25,10 @@ ru:
       new_gist: "Создать Gist вопроса"
       gists_list: "Список всех Gist"
       feedback: "Форма обратной связи"
+      badges_list: "Cписок Бейджей"
+      new_badge: "Новый Бейдж"
+      user_badges: "Ваши достижения"
+      badges_existing: "Посмотреть все возможные достижения"
 
 
     message:

@@ -1,18 +1,18 @@
 <tr>
-  <td class="align-middle">
+  <td scope="col" class="text-center">
     <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id} %>
     <%= render 'form_inline', test: (test == @test ? @test : test) %>
   </td>
-  <td class="align-middle"><%= test_level(test) %></td>
-  <td class="align-middle"><%= test.questions.count %></td>
-  <td class="align-middle"><%= link_to t('shared.links.show'), admin_test_path(test) %></td>
-  <td class="align-middle">
+  <td scope="col" class="text-center"><%= test_level(test) %></td>
+  <td scope="col" class="text-center"><%= test.questions.count %></td>
+  <td scope="col" class="text-center"><%= link_to t('shared.links.show'), admin_test_path(test) %></td>
+  <td scope="col" class="text-center">
     <%= link_to t('shared.links.edit'),
                 edit_admin_test_path(test),
                 data: { test_id: test.id },
                 class: 'form-inline-link' %>
   </td>
-  <td class="align-middle">
+  <td scope="col" class="text-center">
     <%= link_to t('shared.links.delete'),
                 admin_test_path(test),
                 method: :delete,

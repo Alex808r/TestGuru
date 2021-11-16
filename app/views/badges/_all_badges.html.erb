@@ -1,0 +1,19 @@
+<h3 class="display-5"><%= t('.header') %></h3>
+
+<table class="table table-hover">
+  <tr class="table-primary">
+    <th class="align-middle"><%= t('.title') %></th>
+    <th class="align-middle"><%= t('.img_url') %></th>
+  </tr>
+
+  <% Badge.all.each do |badge| %>
+    <tr>
+      <td class="align-middle"><%= badge.title %>  <%#= badge.parameter %></td>
+      <td class="align-middle"><%= image_tag badge.image_url, size: "90x100" %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+  <%= link_to t('shared.links.back'), badges_path %>
+</p>

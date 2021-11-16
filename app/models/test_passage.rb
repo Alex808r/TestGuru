@@ -9,6 +9,12 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
 
+  scope :successfull, -> { where(success: true) }
+
+  def success_true
+    update(success: true)
+  end
+
   def total_questions
     test.questions.count
   end
@@ -43,8 +49,6 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    return if self.current_question.answers.empty?
-    # correct_answers.ids.sort == answer_ids&.map(&:to_i)&.sort
     correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
   end
 

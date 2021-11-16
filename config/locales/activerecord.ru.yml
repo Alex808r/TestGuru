@@ -6,6 +6,7 @@ ru:
       answer: "Ответ"
       user: "Пользователь"
       feedback: "Отзыв"
+      badge: "Бейдж"
     attributes:
       test:
         title: "Название"
@@ -29,6 +30,11 @@ ru:
         email: "email"
         header: "Тема"
         content: "Обращение"
+      badge:
+        title: "Название"
+        image_url: "Изображение"
+        rule: "Правило"
+        parameter: "Параметр"
 
     errors:
       messages:

@@ -15,6 +15,7 @@ ru:
       answer:
         create: "Создать Ответ"
         update: "Обновить Ответ"
+
     label:
       test:
         title: "Заголовок"
@@ -39,14 +40,23 @@ ru:
     nav:
       header: "Меню пользователя - TestGuru "
 
-
   tests:
     index:
       header: "Доступные тесты"
       title: "Заголовок"
       level: "Уровень"
       count: "Количество вопросов"
-      action: "Действие"
+      actions: "Действие"
+  badges:
+    index:
+      header: "Ваши Достижения"
+      title: "Название"
+      image_url: "Изображение"
+      date: "Дата получения"
+    all_badges:
+      header: 'Список возможных достижений'
+      title: "Название"
+      img_url: "Изображение"
 
   admin:
     nav:
@@ -100,6 +110,27 @@ ru:
         question: "Вопрос"
         gist_url: "Hash Gist"
         user: "email пользователя"
+    badges:
+      index:
+        header: "Доступные Бейжди"
+        title: "Название"
+        image_url: "Изображение"
+        rule: "Правило"
+        parameter: "Параметр"
+        actions: "Действия"
+      new:
+        header: "Новый Бейдж"
+      show:
+        title: "Название"
+        image_url: "Изображение"
+        rule: "Правило"
+        parameter: "Параметр"
+      edit:
+        edit: "Редактировать Бейдж: %{title}"
+      create:
+        success: "Бейдж успешно создан"
+      update:
+        success: "Бейдж успешно обновлен"
 
 
   test_passages:
@@ -113,6 +144,9 @@ ru:
       current_question: "Номер текущего вопроса: %{number}"
       in_development: "Скоро тут появится новый тест"
       try_other: "Попробуйте пройти другой тест"
+    update:
+      all_badges: " Ваши Badges"
+      recieved: "Badge получен!"
 
   gists:
     create:
