@@ -3,9 +3,10 @@
 module Badges
   class FirstTestPassed < BadgeRuleSpecification
     def is_satiesfies?
+      return false unless @test_passage.success?
       @title = @value
       user = @test_passage.user
-      user.tests.where(title: @title).count == 1 if @test_passage.success?
+      user.tests.where(title: @title).count == 1
     end
   end
 end

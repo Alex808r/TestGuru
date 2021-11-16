@@ -26,8 +26,6 @@ class SendBadgeService
 
       add_awards(badge) if rule.is_satiesfies?
     end
-
-
   end
 
   def add_awards(badge)

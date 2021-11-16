@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Badges
   class PassTestByCategory < BadgeRuleSpecification
     def is_satiesfies?
