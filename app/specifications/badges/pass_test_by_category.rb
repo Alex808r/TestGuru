@@ -1,7 +1,7 @@
 module Badges
   class PassTestByCategory < BadgeRuleSpecification
     def is_satiesfies?
-      @category = Category.where(title: @value).first
+      @category = Category.where(title: @value).take
       return false unless @test_passage.test.category == @category
       all_tests_in_category = Test.show_tests_by_category(@category).count
       users_tests_by_category = TestPassage.successfull.joins(:test)
