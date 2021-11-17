@@ -79,6 +79,7 @@ ru:
       show:
         title: "Заголовок: "
         level: "Уровень: "
+        passing_time: "Время прохождения мин: "
         questions: "Вопросы: "
         id: "Номер"
         body: "Вопрос"

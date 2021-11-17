@@ -9,6 +9,13 @@
   <%= @test.level %>
 </p>
 
+
+<p>
+  <strong><%= t('.passing_time') %></strong>
+  <%= @test.passing_time %>
+</p>
+
+
 <%= link_to t('shared.links.edit'), edit_admin_test_path(@test) %>
 
 <%= link_to t('shared.links.back'), admin_tests_path %>

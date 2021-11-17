@@ -79,6 +79,7 @@ en:
       show:
         title: "Title: "
         level: "Level: "
+        passing_time: "Passing time min: "
         questions: "Questions: "
         id: "Id"
         body: "Question"
