@@ -3,9 +3,9 @@
 class Badge < ApplicationRecord
 
   enum rules: {
-    first_test_passed: "first_test_passed",
-    pass_test_by_level: "pass_test_by_level",
-    pass_test_by_category: "pass_test_by_category"
+    first_test_passed: 'first_test_passed',
+    pass_test_by_level: 'pass_test_by_level',
+    pass_test_by_category: 'pass_test_by_category'
     }
 
   has_many :user_badges, dependent: :destroy

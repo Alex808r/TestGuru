@@ -13,7 +13,6 @@ class FeedbacksController < ApplicationController
     else
       render :new
     end
-
   end
 
   private
