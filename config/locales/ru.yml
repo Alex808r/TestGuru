@@ -46,6 +46,7 @@ ru:
       title: "Заголовок"
       level: "Уровень"
       count: "Количество вопросов"
+      passing_time: "Время прохождения"
       actions: "Действие"
   badges:
     index:
@@ -67,6 +68,7 @@ ru:
         title: "Заголовок"
         level: "Уровень"
         count: "Количество вопросов"
+        passing_time: "Время прохождения"
         actions: "Действия"
       create:
         success: "Тест успешно создан"
