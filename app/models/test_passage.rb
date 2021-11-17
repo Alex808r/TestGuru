@@ -32,10 +32,11 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil? || self.test.passing_time.nil? || time_is_out?
+    current_question.nil? || time_is_out?
   end
 
   def time_is_out?
+    return if self.test.passing_time.nil?
     ((self.created_at + self.test.passing_time * 60) - Time.now) <= 0
   end
 
