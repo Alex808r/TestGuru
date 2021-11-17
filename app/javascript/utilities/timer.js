@@ -16,7 +16,8 @@ function startTimer(timer) {
 
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
-            document.getElementsByClassName("submit")[0].click()
+            //document.getElementsByClassName("submit")[0].click()
+            document.form.submit[0].click()
         } else {
             let minutes = parseInt(timeLeft / 60000);
             let seconds = parseInt(timeLeft % 60000) / 1000;
