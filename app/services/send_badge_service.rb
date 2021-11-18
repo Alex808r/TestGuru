@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class SendBadgeService
-
   attr_accessor :test_passage, :add_awards
 
   RULE = { first_test_passed: Badges::FirstTestPassed,

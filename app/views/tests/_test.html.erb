@@ -2,6 +2,10 @@
   <td class="text-center"><strong><%= test.title %></strong></td>
   <td class="text-center"><%= test_level(test) %></td>
   <td class="text-center"><strong><%= test.questions.count %></strong></td>
-
+  <% if test.passing_time?%>
+    <td scope="col" class="text-center"><%= test.passing_time.to_s + " min" %></td>
+  <% else %>
+    <td scope="col" class="text-center">-</td>
+  <% end %>
   <td class="text-center"><%= button_to t('shared.button.start'), start_test_path(test), method: :post, class: 'btn btn-success btn-sm' %></td>
 </tr>

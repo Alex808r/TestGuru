@@ -1,5 +1,5 @@
 <% provide(:title, 'Tests') %>
-<h1 class="display-3"> <%= I18n.t('tests.index.header') %> </h1>
+<h1 class="display-4"> <%= I18n.t('tests.index.header') %> </h1>
 
 <p>
   <%= link_to t('shared.links.user_badges'), badges_path, class: "btn btn-primary" %>
@@ -12,6 +12,8 @@
     </th>
     <th scope="col" class="text-center"><%= t('.level') %></th>
     <th scope="col" class="text-center"><%= t('.count') %></th>
+    <th scope="col" class="text-center"><%= t('.passing_time') %></th>
+
     <th scope="col" class="text-center"><%= t('.actions') %></th>
   </tr>
 

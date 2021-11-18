@@ -2,7 +2,6 @@
 
 module Badges
   class PassTestByCategory < BadgeRuleSpecification
-
     def is_satiesfies?
       @category = Category.where(title: @value).first
       return false unless  @test_passage.test.category == @category
@@ -16,6 +15,5 @@ module Badges
         .where(test_passages: { user: @test_passage.user, success: true })
         .distinct
     end
-
   end
 end

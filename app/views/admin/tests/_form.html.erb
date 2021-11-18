@@ -18,10 +18,10 @@
   </p>
 
   <p>
-    <%#= form.label :author_id %><br>
-    <%#= form.collection_select :author_id, User.all, :id, :name, prompt: true %>
+    <%= form.label :passing_time, t('.passing_time') %><br>
+    <%= form.number_field :passing_time, id: :test_passing_time %>
   </p>
 
   <p> <%= form.submit %> </p>
-  <p> <%#= form.submit(@test.new_record? ? "Create" : "Update") %> </p>
+
 <% end %>
