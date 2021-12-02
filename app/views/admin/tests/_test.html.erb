@@ -5,6 +5,13 @@
   </td>
   <td scope="col" class="text-center"><%= test_level(test) %></td>
   <td scope="col" class="text-center"><%= test.questions.count %></td>
+
+  <% if test.passing_time?%>
+    <td scope="col" class="text-center"><%= test.passing_time.to_s + " min" %></td>
+  <% else %>
+    <td scope="col" class="text-center">-</td>
+  <% end %>
+
   <td scope="col" class="text-center"><%= link_to t('shared.links.show'), admin_test_path(test) %></td>
   <td scope="col" class="text-center">
     <%= link_to t('shared.links.edit'),

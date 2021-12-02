@@ -36,6 +36,7 @@ class Test < ApplicationRecord
   { scope: :level, message: 'The name and level of the test are already in use' }
 
   validates :level, numericality: { only_integer: true }
+  validates :passing_time, presence: true
 
   scope :level_easy, -> { where(level: 0..1) }
   scope :level_medium, -> { where(level: 2..4) }

@@ -46,6 +46,7 @@ en:
       title: "Title"
       level: "Level"
       count: "Count"
+      passing_time: "Passing time"
       action: "Action"
   badges:
     index:
@@ -67,6 +68,7 @@ en:
         title: "Title"
         level: "Level"
         count: "Count"
+        passing_time: "Passing time"
         actions: "Actions"
       create:
         success: "The test was successfully created"
@@ -77,6 +79,7 @@ en:
       show:
         title: "Title: "
         level: "Level: "
+        passing_time: "Passing time min: "
         questions: "Questions: "
         id: "Id"
         body: "Question"

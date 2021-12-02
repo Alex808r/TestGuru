@@ -12,6 +12,12 @@
 
   <h3> <%= t('.current_question', number: @test_passage.current_question_number) %></h3><br>
 
+  <% if @test_passage.test.passing_time?%>
+    <div data-time_start="<%= @test_passage.created_at %>",
+         data-duration="<%= @test_passage.test.passing_time %>", class='timer'>
+    </div>
+  <% end %>
+
   <%= content_tag :div, class: 'bar', data: { current_number: @test_passage.current_question_number,
                                               total_questions: @test_passage.total_questions } do %>
     <%= content_tag :div, class: 'progress-bar' do %>
