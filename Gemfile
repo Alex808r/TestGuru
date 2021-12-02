@@ -73,6 +73,8 @@ group :development do
 
   # For devise confirmable email
   gem 'letter_opener'
+
+  gem 'annotate'
 end
 
 group :test do

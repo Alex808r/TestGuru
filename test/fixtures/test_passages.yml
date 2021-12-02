@@ -1,4 +1,28 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: test_passages
+#
+#  id                  :bigint           not null, primary key
+#  correct_questions   :integer          default(0)
+#  success             :boolean          default(FALSE)
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  current_question_id :integer
+#  test_id             :integer          not null
+#  user_id             :integer          not null
+#
+# Indexes
+#
+#  index_test_passages_on_current_question_id  (current_question_id)
+#  index_test_passages_on_test_id              (test_id)
+#  index_test_passages_on_user_id              (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (current_question_id => questions.id)
+#  fk_rails_...  (test_id => tests.id)
+#  fk_rails_...  (user_id => users.id)
+#
 
 one:
   user: one
